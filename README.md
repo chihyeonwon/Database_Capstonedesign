@@ -2,10 +2,10 @@
 컴퓨터공학과 모바일 프로그래밍 정리입니다.
 
 ## 23.09.06 프로젝트 개발 일지
-[SplashActivity 3초간 지속 후 IntroActivity로 변경]
-![image](https://github.com/wonttan/Mobile_Programming/assets/58906858/63361fdc-ecbe-484d-aa3e-37297a21537b)   
-[auth패키지의 IntroActivity 화면]
-![image](https://github.com/wonttan/Mobile_Programming/assets/58906858/dbd816b9-cd83-4d6f-afd6-05c2748ad7f3)
+#### [SplashActivity 3초간 지속 후 IntroActivity로 변경]
+![image](https://github.com/wonttan/Mobile_Programming/assets/58906858/63361fdc-ecbe-484d-aa3e-37297a21537b)       
+#### [auth패키지의 IntroActivity 화면]
+![image](https://github.com/wonttan/Mobile_Programming/assets/58906858/dbd816b9-cd83-4d6f-afd6-05c2748ad7f3)    
 ```
 SplashActivity 화면을 구현한 후에 배경색을 노랑색으로 변경하고
 로고 이미지를 다운받아서 Split으로 화면의 정중앙에 위치시켰다.
