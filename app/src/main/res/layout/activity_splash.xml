@@ -7,4 +7,9 @@
     android:background="#ffd400"
     tools:context=".SplashActivity">
 
+    <ImageView
+        android:src="@drawble"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
