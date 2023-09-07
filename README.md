@@ -50,3 +50,27 @@ startActivity로 intent를 넣어준다. 회원가입도 같은 방법으로 생
 
 다음에는 LoginActivity와 JoinActivity에 UI를 넣어준다.
 ```
+#### 로그인 페이지
+![image](https://github.com/wonttan/Mobile_Programming/assets/58906858/460a3f47-8c16-4c94-973b-e7a385dcc2bf)
+```
+Login페이지를 꾸며줄텐데 LinearLayout 안에 로그인 텍스트뷰를 상단 가운데에 넣어주고
+LinearLayout안에 하나의 EditText를 넣어주었다.
+EditText의 바깥부분을 꾸며주는 LinearLayout 하나를 넣었다.
+
+EditText 레이아웃 스타일(background, textSize, margin)을 themes.xml 파일의
+AuthEditText라는 이름의 style의 item으로 넣어주었다.
+style="@style/AuthEditText"를 넣어서 만든 스타일을 적용하였다.
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
