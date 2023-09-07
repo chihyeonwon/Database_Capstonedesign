@@ -1,4 +1,4 @@
-# Mobile_Programming
+![image](https://github.com/wonttan/Mobile_Programming/assets/58906858/b6322b2b-6843-41c8-9d06-bd7227373e1c)# Mobile_Programming
 컴퓨터공학과 모바일 프로그래밍 정리입니다.
 
 ## 23.09.06 프로젝트 개발 일지
@@ -24,4 +24,11 @@ SplashActivity를 3초간 띄우고 IntroActivity를 띄우도록 Handler.postDe
 layout의 Split에서 로고의 위치를 마우스로 설정할 수 있다는 장점을 발견하였다.
 
 다음으로 auth 패키지 안의 IntroActivity를 꾸며준다.
+```
+## 23.09.07 프로젝트 개발 일지
+![image](https://github.com/wonttan/Mobile_Programming/assets/58906858/8545fefe-0167-423a-9aba-9941091b225a)
+```
+Relativelayout 안에 이미지View를 두 개 넣고 LinearLayout(orientation:vertical) 안에 로그인, 회원가입, 비회원 가입 버튼을 세 개 추가하였다.
+
+다음에는 intent를 사용하여 버튼을 눌렀을 때 화면이 이동하는 기능을 추가할 예정이다.    
 ```
