@@ -1,4 +1,4 @@
-![image](https://github.com/wonttan/Mobile_Programming/assets/58906858/8572b523-eb90-4d9d-a712-782b01799bfa)![image](https://github.com/wonttan/Mobile_Programming/assets/58906858/b1c41b85-6748-43dd-80c3-2495c0d39ad7)![image](https://github.com/wonttan/Mobile_Programming/assets/58906858/13381033-7bbf-42af-b47a-2903b35c667c)# Mobile_Programming
+# Mobile_Programming
 컴퓨터공학과 모바일 프로그래밍 정리입니다.
 
 ## 23.09.06 프로젝트 개발 일지
