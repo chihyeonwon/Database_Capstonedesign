@@ -6,4 +6,16 @@
     android:layout_height="match_parent"
     tools:context=".auth.IntroActivity">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:src="@drawable/loginbg"
+            android:scaleType="fitXY"
+            android:layout_width="match_parent"
+            android:layout_height="500dp"/>
+
+    </RelativeLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
