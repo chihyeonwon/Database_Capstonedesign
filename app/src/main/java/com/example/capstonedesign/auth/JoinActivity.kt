@@ -3,7 +3,9 @@ package com.example.capstonedesign.auth
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import androidx.databinding.DataBindingUtil
 import com.example.capstonedesign.R
+import com.example.capstonedesign.databinding.ActivityJoinBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.ktx.Firebase
 
@@ -11,9 +13,13 @@ class JoinActivity : AppCompatActivity() {
 
     private lateinit var auth: FirebaseAuth
 
+    private lateinit var binding:ActivityJoinBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_join)
+
+        binding = DataBindingUtil.setContentView(this,R.layout.activity_join)
+
         auth = FirebaseAuth.getInstance()
 
         auth.createUserWithEmailAndPassword("abc@abc.com", "abcdabcd")
