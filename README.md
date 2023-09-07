@@ -1,4 +1,4 @@
-# Mobile_Programming
+![image](https://github.com/wonttan/Mobile_Programming/assets/58906858/8572b523-eb90-4d9d-a712-782b01799bfa)![image](https://github.com/wonttan/Mobile_Programming/assets/58906858/b1c41b85-6748-43dd-80c3-2495c0d39ad7)![image](https://github.com/wonttan/Mobile_Programming/assets/58906858/13381033-7bbf-42af-b47a-2903b35c667c)# Mobile_Programming
 컴퓨터공학과 모바일 프로그래밍 정리입니다.
 
 ## 23.09.06 프로젝트 개발 일지
@@ -83,7 +83,23 @@ Android에서 Firebase 인증 시작하기 공식문서를 참조하여 기존 �
 여기서 Java의 형태로 auth를 생성하고 회원가입페이지가 실행되었을 때 임의의 이메일과 비밀번호를 가지는 유저를 삽입해보았다.
 정상적으로 임의의 이메일과 비밀번호를 가지는 유저가 Firebase Auth에 저장됨을 확인할 수 있었다.
 ```
+## joinActivity(회원가입)페이지 데이터바인딩
+#### 이메일, 비밀번호 체크 로직
+![image](https://github.com/wonttan/Mobile_Programming/assets/58906858/3a348d70-fa6c-41e8-b633-4689d4289359)
+```
+joinActivity를 바인딩하기 위해서 joinActivity 레이아웃의 코드를 layout으로 감싼 후에
+joinActivity(회원가입) 액티비티에서 회원가입하기 버튼을 눌렀을 때 이메일과 비밀번호 데이터 값을 전달하기 위해서
+joinActivity 데이터 바인딩을 생성합니다. joinActivity의 버튼에 joinBtn id를 부여하고
+버튼을 클릭했을 때 발생하는 이벤트리스너에서 이메일과 패스워드 EditText에 입력된 것 각각을 email, password1, password2 변수에
+텍스트 문자열 형태로 저장합니다. (각 EditText의 id를 부여한 후)
 
+email, password1, password2가 비어있을 때 토스트 메시지를 출력하도록 로직을 수정하고
+password1과 password2가 같지 않을 때 비밀번호를 똑같이 입력하라는 메시지를 출력하도록 수정합니다.
+또 password1 비밀번호의 길이가 6보다 작을 때 비밀번호를 6보다 길게 입력하라는 메시지를 출력하도록 수정합니다.
+isGoToJoin boolean 변수값이 true에서 각 조건 즉 이메일, 비밀번호가 비어있거나 비밀번호가 6자 이상이거나, password1, password2가 같지않을때
+isGoToJoin 변수 값이 false로 변경되게하고 isGoToJoin이 true일 때(즉 회원가입을 할 수 있는 조건이 되는 이메일과 비밀번호일 때)
+파이어베이스 auth에 이메일과 패스워드를 가지고 유저를 생성하도록 합니다.
+```
 
 
 
