@@ -60,6 +60,11 @@ EditText의 바깥부분을 꾸며주는 LinearLayout 하나를 넣었다.
 EditText 레이아웃 스타일(background, textSize, margin)을 themes.xml 파일의
 AuthEditText라는 이름의 style의 item으로 넣어주었다.
 style="@style/AuthEditText"를 넣어서 만든 스타일을 적용하였다.
+
+같은 방법으로 EditText를 복사해서 비밀번호 입력칸을 만들어주고
+inputType을 패스워드로 줘서 입력했을 때 *모양이 들어가도록 수정하였다.
+
+마지막으로 최하단에 로그인하기 버튼을 생성하였다.
 ```
 
 
