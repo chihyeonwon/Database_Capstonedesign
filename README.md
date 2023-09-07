@@ -32,3 +32,21 @@ Relativelayout 안에 이미지View를 두 개 넣고 LinearLayout(orientation:v
 
 다음에는 intent를 사용하여 버튼을 눌렀을 때 화면이 이동하는 기능을 추가할 예정이다.    
 ```
+## 23.09.07 프로젝트 개발 일지
+```
+auth 패키지 안에 LoginActivity(로그인버튼 눌렀을때 이동할 화면), JoinActivity(회원가입버튼 눌렀을 때 이동할 화면)을 생성한다.
+
+데이터 바인딩과 뷰 바인딩 중 데이터 바인딩 기술을 사용하기 위해서 Gradle Script 밑의 build.gradle(Module: app이름)의 android 안에
+다음에 해당하는 코드 dataBinding { enabled true }를 넣고 Sync now를 선택한다.
+
+activity_IntroActivity의 코드를 layout으로 감싼다.
+IntroActivity에 바인딩을 생성한다. 바인딩을 생성한 후 에는 activity_IntroActivity에 가서 버튼에 각각 id를 부여하였다.
+로그인 android:id="@+id/loginBtn", 회원가입 android:id="@+id/joinBtn", 비회원 가입 android:id="@+id/noAccountBtn"
+
+다시 IntroActivity로 가서 binding.loginBtn.setOnClickListenr 이벤트리스너를 사용하여 LoginActivity로 이동하는 intent를 생성한 후
+startActivity로 intent를 넣어준다. 회원가입도 같은 방법으로 생성한다.
+
+각 버튼을 눌렀을 때 이벤트리스너에 넣은 각각의 액티비티로 화면전환을 하는 기능을 구현하였다.
+
+다음에는 LoginActivity와 JoinActivity에 UI를 넣어준다.
+```
