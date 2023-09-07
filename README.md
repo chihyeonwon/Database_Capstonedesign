@@ -75,9 +75,13 @@ Firebase Sdk를 지시대로 넣어준다. plugin 등등 이때 app 수준의 bu
 
 빌드-Authentication에서 이메일, 비밀번호, 익명 사용설정한다.
 ```
-[파이어베이스 Android 공식 문서](https://firebase.google.com/docs/auth/android/start?hl=ko)
+[파이어베이스 Android 공식 문서](https://firebase.google.com/docs/auth/android/start?hl=ko)    
+![image](https://github.com/wonttan/Mobile_Programming/assets/58906858/8d4b264d-9044-49a2-987e-9206d6c05408)    
+![image](https://github.com/wonttan/Mobile_Programming/assets/58906858/383521be-f7d1-49a7-ae60-120df9d9dea1)   
 ```
-Android에서 Firebase 인증 시작하기 공식문서를 참조하여 
+Android에서 Firebase 인증 시작하기 공식문서를 참조하여 기존 회원을 넣는 작업을 수행하였다.
+여기서 Java의 형태로 auth를 생성하고 회원가입페이지가 실행되었을 때 임의의 이메일과 비밀번호를 가지는 유저를 삽입해보았다.
+정상적으로 임의의 이메일과 비밀번호를 가지는 유저가 Firebase Auth에 저장됨을 확인할 수 있었다.
 ```
 
 
