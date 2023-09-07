@@ -54,6 +54,19 @@
             android:layout_marginLeft="18dp"
             android:layout_marginRight="10dp"/>
 
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:inputType="textPassword"
+            android:hint="password check"
+            style="@style/AuthEditText"/>
+        <LinearLayout
+            android:background="#999999"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginLeft="18dp"
+            android:layout_marginRight="10dp"/>
+
         <Button
             android:text="로그인하기"
             android:layout_margin="20dp"
