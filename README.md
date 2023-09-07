@@ -62,9 +62,23 @@ inputType을 패스워드로 줘서 입력했을 때 *모양이 들어가도록 
 마지막으로 최하단에 로그인하기 버튼을 생성하였다.
 다음으로 Firebase 데이터베이스를 사용하기 위한 준비를 한다.
 ```
+#### 파이어베이스 등록 (Firebase Authentication 사용)
+![image](https://github.com/wonttan/Mobile_Programming/assets/58906858/ff61dada-aa51-4d3d-85d0-9e741c64aca4)       
+![image](https://github.com/wonttan/Mobile_Programming/assets/58906858/057312a2-65c2-4367-b437-ef908e419881)            
+![image](https://github.com/wonttan/Mobile_Programming/assets/58906858/fde6dbee-65f2-402d-9ff0-007958cfed3a)     
+```
+capstonedesign이라는 이름의 파이어베이스 프로젝트를 생성하고 앱 등록에서 패키지명(com.example.capstonedesign)을 넣고
+구성 설정 파일을 다운받아서 project의 app폴더에 넣어준다.
 
+Firebase Sdk를 지시대로 넣어준다. plugin 등등 이때 app 수준의 build.gradle 파일인지 project 수준의 build.gradle 파일인지 잘 구분해서
+넣는다.
 
-
+빌드-Authentication에서 이메일, 비밀번호, 익명 사용설정한다.
+```
+[파이어베이스 Android 공식 문서](https://firebase.google.com/docs/auth/android/start?hl=ko)
+```
+Android에서 Firebase 인증 시작하기 공식문서를 참조하여 
+```
 
 
 
