@@ -85,7 +85,7 @@ Android에서 Firebase 인증 시작하기 공식문서를 참조하여 기존 �
 ```
 ## joinActivity(회원가입)페이지 데이터바인딩
 #### 이메일, 비밀번호 체크 로직
-![image](https://github.com/wonttan/Mobile_Programming/assets/58906858/3a348d70-fa6c-41e8-b633-4689d4289359)
+![image](https://github.com/wonttan/Mobile_Programming/assets/58906858/ca8617cf-3b46-4d4c-9395-ecf6c0dee8de)
 ```
 joinActivity를 바인딩하기 위해서 joinActivity 레이아웃의 코드를 layout으로 감싼 후에
 joinActivity(회원가입) 액티비티에서 회원가입하기 버튼을 눌렀을 때 이메일과 비밀번호 데이터 값을 전달하기 위해서
