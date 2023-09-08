@@ -100,7 +100,16 @@ isGoToJoin boolean 변수값이 true에서 각 조건 즉 이메일, 비밀번�
 isGoToJoin 변수 값이 false로 변경되게하고 isGoToJoin이 true일 때(즉 회원가입을 할 수 있는 조건이 되는 이메일과 비밀번호일 때)
 파이어베이스 auth에 이메일과 패스워드를 가지고 유저를 생성하도록 합니다.
 ```
-
+## 23.09.08 개발일지
+#### 올바른 이메일과 비밀번호를 입력했을 때 성공 메시지와 함께 화면 이동
+![image](https://github.com/wonttan/Mobile_Programming/assets/58906858/654f2c2d-0c1e-48d6-a7ab-4a7dcd9f4ced)
+#### MainActivity에서 뒤로가기를 눌렀을 때 앱이 종료
+![image](https://github.com/wonttan/Mobile_Programming/assets/58906858/aad77945-328d-43c7-928c-b13e82ec7662)
+```
+이메일과 패스워드를 입력하고 회원가입하기 버튼을 눌렀을 때 화면이 이동되도록 intent를 만들어주었다.
+이때 intent의 flags의 NEW_TASK, CLEAR_TASK 를 사용하여 화면이 MainActivity로 이동된 다음 뒤로가기를 눌렀을 때 앱이 종료되도록 설정하였습니다.
+(회원가입(로그인)이 되고 난 후에는 뒤로가기를 했을 때 다시 회원가입 페이지로 가기보다 앱이 종료되는 것이 더 자연스럽기 때문)
+```
 
 
 
