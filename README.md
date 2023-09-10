@@ -142,7 +142,7 @@ IntroActivity의 비회원 로그인 버튼을 바인딩하고 Firebase auth의 
 SplashActivity 화면이 나타난 후에 auth의 currentUser의 uid 값이 있다면 (로그인을 한 적 있는 경우) MainActivity로 바로 이동하게끔 하고
 uid를 체크해서 없다면 (로그인한 적이 없는 경우거나 로그아웃을 한 경우) IntroAcitivty로 이동하게끔 로직을 생성했다.
 
-auth의 currentUser의 uid를 체크하는 과정에서 flutter에서 썼던 ? 구문하였다., 즉 kotlin 역시도 flutter와 마찬가지로
+auth의 currentUser의 uid를 체크하는 과정에서 flutter에서 썼던 ? 구문을 사용하였다, 즉 kotlin 역시도 flutter와 마찬가지로
 null saftey(널 안정성) 기능을 제공한다는 것을 확인할 수 있었다.
 ```
 
