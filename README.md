@@ -180,3 +180,10 @@ main_nav의 design에서 homeFragment 와 나머지 4개의 fragments를 연결�
 homeFragment에서 바인딩한 tiptap을 클릭했을 때
 it.findNavController().navigate(R.id.action_homeFragment_to_tipFragment) 메서드를 이용하여 tipFrament로 이동하도록 설정하였다.
 ```
+#### 탭 표시바 생성
+![image](https://github.com/wonchihyeon/Mobile_Programming/assets/58906858/edb72b7e-b4af-415a-96bd-6acddc27bf96)     
+![image](https://github.com/wonchihyeon/Mobile_Programming/assets/58906858/bd579a5b-e6f8-46ff-96ea-3c6fdede60d7)    
+```
+탭이 어떤 Fragment에 위치하는 지 알 수 있게 표시하기 위해서 LinearLayout 5개를 사용하여 탭 표시바를 생성한다.
+LinearLayout 5개를 나열하되 layout_weight="1"로 줘서 5개의 영역으로 나누고 각 Fragment의 LinearLayout 영역의 색을 변경한다.
+```
