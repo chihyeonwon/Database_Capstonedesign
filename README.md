@@ -136,5 +136,13 @@ IntroActivity로 이동하는 intent를 생성하여 화면 이동기능을 추�
 IntroActivity의 비회원 로그인 버튼을 바인딩하고 Firebase auth의 signInAnonymously 메서드를 사용하여 익명 로그인을 구현한다.
 익명 로그인을 하면 로그인 성공 메시지와 함께 MainAcitivity로 이동하도록 하고 익명 로그인에 실패하면 실패 메시지를 띄운다.
 ```
+#### SplashActivity에서 화면 이동 로직 구현 (로그인User->바로 Main, 로그아웃User->Intro)
+```
+로그인이 된 유저가 앱을 종료하고 다시 앱에 들어갈 때 MainActivity가 아닌 IntroActivity로 이동하는 문제가 발생함을 확인했다.
+SplashActivity 화면이 나타난 후에 auth의 currentUser의 uid 값이 있다면 (로그인을 한 적 있는 경우) MainActivity로 바로 이동하게끔 하고
+uid를 체크해서 없다면 (로그인한 적이 없는 경우거나 로그아웃을 한 경우) IntroAcitivty로 이동하게끔 로직을 생성했다.
 
+auth의 currentUser의 uid를 체크하는 과정에서 flutter에서 썼던 ? 구문하였다., 즉 kotlin 역시도 flutter와 마찬가지로
+null saftey(널 안정성) 기능을 제공한다는 것을 확인할 수 있었다.
+```
 
