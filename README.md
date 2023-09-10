@@ -111,6 +111,7 @@ isGoToJoin 변수 값이 false로 변경되게하고 isGoToJoin이 true일 때(�
 (회원가입(로그인)이 되고 난 후에는 뒤로가기를 했을 때 다시 회원가입 페이지로 가기보다 앱이 종료되는 것이 더 자연스럽기 때문)
 ```
 ## 23.09.09 개발일지
+#### 로그인 기능 구현
 ![image](https://github.com/wonttan/Mobile_Programming/assets/58906858/5827f3a9-f740-434a-b4d1-a0520df299e8)
 ![image](https://github.com/wonttan/Mobile_Programming/assets/58906858/25cdfee9-54fe-4007-94a7-94a34ef56d49)
 ```
@@ -121,8 +122,15 @@ Firebase auth의 signInWithEmailAndPassword 메서드를 사용하여 이메일�
 로그인에 성공하면 MainActivity로 이동하는 intent를 실행하게끔 한다.(joinActivity의 intent와 동일)
 ```
 
-
-
+## 23.09.10 개발일지
+#### 로그아웃 기능 구현
+![image](https://github.com/wonttan/Mobile_Programming/assets/58906858/98ef4509-d9ba-40da-a7c0-53a6c59b93dc)
+![image](https://github.com/wonttan/Mobile_Programming/assets/58906858/3dfe2c26-cfce-41c7-ae98-ccbf6e079b42)
+```
+로그인, 회원가입을 한 후에 나오는 MainActivity에 로그아웃 기능을 하는 버튼을 추가하였다.
+MainActivity에 Firebase auth의 signOut 메서드를 사용하여 로그아웃 기능을 구현하고
+IntroActivity로 이동하는 intent를 생성하여 화면 이동기능을 추가하였다.
+```
 
 
 
