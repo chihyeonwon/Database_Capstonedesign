@@ -16,6 +16,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:weightSum="5"
+                android:background="@color/white"
                 app:layout_constraintBottom_toBottomOf="parent">
 
                 <ImageView
