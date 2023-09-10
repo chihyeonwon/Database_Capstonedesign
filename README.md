@@ -170,3 +170,13 @@ homeFragement의 최하단에 Navigation layout을 만들어 주기 위해서 Li
 
 다음에는 각 이미지를 클릭했을 때 fragment가 전환되는 기능을 구현하면 될 것 같다.
 ```
+#### Navigate to Tiptap Fragment
+![image](https://github.com/wonchihyeon/Mobile_Programming/assets/58906858/57cddf57-279f-4191-8895-fdbe4dc56580)
+![image](https://github.com/wonchihyeon/Mobile_Programming/assets/58906858/d0b1c4a2-3e16-4733-8e8c-bb2595cee835)
+```
+homeFragment에서 바인딩을 생성한다.(DataBindingUtil.inflate)
+
+main_nav의 design에서 homeFragment 와 나머지 4개의 fragments를 연결한다.(action 생성)
+homeFragment에서 바인딩한 tiptap을 클릭했을 때
+it.findNavController().navigate(R.id.action_homeFragment_to_tipFragment) 메서드를 이용하여 tipFrament로 이동하도록 설정하였다.
+```
