@@ -161,3 +161,12 @@ activity_main.xml- Design - Containers - NavHostFragment를 넣는다. (이 때 
 
 main_nav Design에서 생성한 5개의 fragment들을 추가한다.
 ```
+#### Home Fragment Layout 
+![image](https://github.com/wonttan/Mobile_Programming/assets/58906858/2899fd77-2cb8-4c4d-8780-78e946455950)
+```
+homeFragement의 최하단에 Navigation layout을 만들어 주기 위해서 LinearLayout 안에 5개의 이미지를 넣었다.
+(각 이미지의 layout_weight를 1로하고 부모 layout에서 weightSum을 5로 줘서 5개의 이미지의 비율을 일정하도록 하였다)
+데이터 바인딩을 이용하기 위해 이미지 뷰 각각에 id를 부여하고 코드를 layout으로 감싼다.
+
+다음에는 각 이미지를 클릭했을 때 fragment가 전환되는 기능을 구현하면 될 것 같다.
+```
