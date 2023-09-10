@@ -32,6 +32,7 @@ Relativelayout 안에 이미지View를 두 개 넣고 LinearLayout(orientation:v
 다음에는 intent를 사용하여 버튼을 눌렀을 때 화면이 이동하는 기능을 추가할 예정이다.    
 ```
 ## 23.09.07 프로젝트 개발 일지
+![image](https://github.com/wonttan/Mobile_Programming/assets/58906858/8620a8e3-f721-4df6-951e-f448af172dc1)
 ```
 auth 패키지 안에 LoginActivity(로그인버튼 눌렀을때 이동할 화면), JoinActivity(회원가입버튼 눌렀을 때 이동할 화면)을 생성한다.
 데이터 바인딩과 뷰 바인딩 중 데이터 바인딩 기술을 사용하기 위해서 Gradle Script 밑의 build.gradle(Module: app이름)의 android 안에
@@ -43,8 +44,6 @@ IntroActivity에 바인딩을 생성한다. 바인딩을 생성한 후 에는 ac
 startActivity로 intent를 넣어준다. 회원가입도 같은 방법으로 생성한다.
 각 버튼을 눌렀을 때 이벤트리스너에 넣은 각각의 액티비티로 화면전환을 하는 기능을 구현하였다.
 다음에는 LoginActivity와 JoinActivity에 UI를 넣어준다.
-auth 패키지 안에 LoginActi지
-![image](https://github.com/wonttan/Mobile_Programming/assets/58906858/8620a8e3-f721-4df6-951e-f448af172dc1)
 ```
 #### 로그인 페이지
 ![image](https://github.com/wonttan/Mobile_Programming/assets/58906858/460a3f47-8c16-4c94-973b-e7a385dcc2bf)
@@ -149,4 +148,16 @@ null saftey(널 안정성) 기능을 제공한다는 것을 확인할 수 있었
 ```
 MainActivity의 최상단에는 min_logo 이미지뷰와 menu 이미지 뷰를 하나의 LinearLayout에 구성하고
 그 밑에 LinearLayout을 생성하여 구분선 효과를 줬다. (LinearLayout 2개를 쌓음)
+```
+#### Navigation
+![image](https://github.com/wonttan/Mobile_Programming/assets/58906858/6cf26d60-6a63-4676-ae7f-25c98fbda9b8)
+```
+app에서 main_nav Android Resource File을 추가한다. 이 때 Resource Type을 Navigation으로 한다.
+
+Fragment들을 넣을 패키지를 생성하고 그 아래에 5개의 Fragment들을 만들어 준다. (탭이 5개 필요하기 때문)
+(HomeFragment(Blank), TipFragment, TalkFragment, BookmarkFragment, StoreFragment)
+
+activity_main.xml- Design - Containers - NavHostFragment를 넣는다. (이 때 main_nav Resource File을 선택)
+
+main_nav Design에서 생성한 5개의 fragment들을 추가한다.
 ```
