@@ -107,13 +107,18 @@ isGoToJoin 변수 값이 false로 변경되게하고 isGoToJoin이 true일 때(�
 ![image](https://github.com/wonttan/Mobile_Programming/assets/58906858/aad77945-328d-43c7-928c-b13e82ec7662)
 ```
 이메일과 패스워드를 입력하고 회원가입하기 버튼을 눌렀을 때 화면이 이동되도록 intent를 만들어주었다.
-이때 intent의 flags의 NEW_TASK, CLEAR_TASK 를 사용하여 화면이 MainActivity로 이동된 다음 뒤로가기를 눌렀을 때 앱이 종료되도록 설정하였습니다.
+이때 intent의 flags의 NEW_TASK, CLEAR_TASK 를 사용하여 화면이 MainActivity로 이동된 다음 뒤로가기를 눌렀을 때 앱이 종료되도록 설정한다.
 (회원가입(로그인)이 되고 난 후에는 뒤로가기를 했을 때 다시 회원가입 페이지로 가기보다 앱이 종료되는 것이 더 자연스럽기 때문)
 ```
 ## 23.09.09 개발일지
+![image](https://github.com/wonttan/Mobile_Programming/assets/58906858/5827f3a9-f740-434a-b4d1-a0520df299e8)
+![image](https://github.com/wonttan/Mobile_Programming/assets/58906858/25cdfee9-54fe-4007-94a7-94a34ef56d49)
 ```
 이제 로그인 기능을 넣기 위해서 로그인 액티비티의 레이아웃을 Layout으로 감싼 후에 바인딩을 생성한다.
 로그인 액티비티의 이메일, 패스워드, 로그인버튼에 id를 생성한다.
+Firebase auth의 signInWithEmailAndPassword 메서드를 사용하여 이메일과 패스워드로 로그인 시도를 했을 때
+성공햇을 때와 실패했을 때의 로직을 구현했다.
+로그인에 성공하면 MainActivity로 이동하는 intent를 실행하게끔 한다.(joinActivity의 intent와 동일)
 ```
 
 
