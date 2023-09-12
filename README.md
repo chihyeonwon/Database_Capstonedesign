@@ -187,3 +187,10 @@ it.findNavController().navigate(R.id.action_homeFragment_to_tipFragment) 메서�
 탭이 어떤 Fragment에 위치하는 지 알 수 있게 표시하기 위해서 LinearLayout 5개를 사용하여 탭 표시바를 생성한다.
 LinearLayout 5개를 나열하되 layout_weight="1"로 줘서 5개의 영역으로 나누고 각 Fragment의 LinearLayout 영역의 색을 변경한다.
 ```
+## 23.09.11
+#### Fragment 연결
+![image](https://github.com/wonchihyeon/Mobile_Programming/assets/58906858/707867e4-16b2-45e4-afa2-25e5c80cc7f9)
+```
+각 Fragment들을 모두 연결한다.
+ homeFragment에서 사용한 navigate함수를 조금씩 바꿔가면서 나머지 Fragment들의 코드들을 Fragment에 맞게 고친다.
+```
