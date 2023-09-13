@@ -23,6 +23,10 @@ private const val ARG_PARAM2 = "param2"
 class HomeFragment : Fragment() {
 
     private lateinit var binding:FragmentHomeBinding
+
+    var fname: String = ""
+    var str: String = ""
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
