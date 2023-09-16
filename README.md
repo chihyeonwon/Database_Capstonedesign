@@ -194,3 +194,10 @@ LinearLayout 5개를 나열하되 layout_weight="1"로 줘서 5개의 영역으�
 각 Fragment들을 모두 연결한다.
  homeFragment에서 사용한 navigate함수를 조금씩 바꿔가면서 나머지 Fragment들의 코드들을 Fragment에 맞게 고친다.
 ```
+## 23.09.16 개발일지
+#### Tip Fragment UI 
+![image](https://github.com/wonchihyeon/Mobile_Programming/assets/58906858/e458048f-a987-4f2c-8c78-ca96ac82c1f6)
+```
+Tip Fragment의 레이아웃은 하나의 Layout에 3개의 이미지를 일정한 간격으로 배치한 후
+이 LinearLayout 세 개를 Vertical 수직으로 배치하였습니다.
+```
