@@ -208,3 +208,9 @@ Tip Fragment의 레이아웃은 하나의 Layout에 3개의 이미지를 일정�
 팁 Fragment에서 Contents를 클릭했을 때 ContentsList가 나올 Activity를 생성한다.
 Activity에는 상단에 TextView와 recycleview를 배치한다.
 ```
+#### content_rv_item layout File 작성
+![image](https://github.com/wonchihyeon/Database_Capstonedesign/assets/58906858/e29d0ba8-98cd-43bd-903c-1b41cee97b61)
+```
+각 Item이 있을 content_rv_item 이름의 Layout 파일을 작성한다
+layout 파일에는 상단에 이미지와 텍스트를 넣는다.
+```
