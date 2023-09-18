@@ -255,6 +255,7 @@ GridLayoutManager(this, 2) 2줄로 한다.
 ```
 #### RecyclerView Data Flow Diagram
 ![image](https://github.com/wonchihyeon/Database_Capstonedesign/assets/58906858/283a260a-559b-4763-a75f-646f02763af6)    
+#### item을 a,b,c가 아닌 Model을 넘겨준다.
 ![image](https://github.com/wonchihyeon/Database_Capstonedesign/assets/58906858/efbfafd4-8b7a-40b4-8fe0-2342af79f7ed)    
 ```
 지금까지 생성한 ContentListActivity에서 Adaptor를 통한 데이터 전송의 흐름을 나타내면 다음과 같다.
@@ -265,9 +266,17 @@ ContentListActivity에서 생성한 rv adpater에 끝으로 연결한다.
 다음 작업으로 a, b, c item을 imgUrl과 title이 들어 있는 Model 로 넘긴다.
 ```
 #### ContentModel Kotlin File 작성
-![image](https://github.com/wonchihyeon/Database_Capstonedesign/assets/58906858/ead315d4-1d36-434e-bba8-8566d35eb1d4)
+![image](https://github.com/wonchihyeon/Database_Capstonedesign/assets/58906858/ead315d4-1d36-434e-bba8-8566d35eb1d4)    
+#### ContentListView에서 추가한 ContentModel의 데이터를 화면에 뿌린다.
+![image](https://github.com/wonchihyeon/Database_Capstonedesign/assets/58906858/264f9730-b9c1-49e0-b346-fe2726d22283)
 ```
 ContentModel Kotlin File을 작성한다.
 
 data class () 안에 String 타입의 ImageUrl과 title을 넣어준다.
+
+ContentRVAdapter의 데이터 타입을 String에서 ContentModel로 수정하고
+add.Item의 매개변수 또한 ContentModel의 데이터타입과 같이 수정한다. ContentModel("imageurl1", "title1")
+
+content_rv_item의 각 요소에 id를 부여하고 (TextView의 id를 textArea)
+ContentRVAdapter의 bindItem 함수(items들 하나씩을 화면에 표시해주는 함수)에서 item의 title을 바인딩한 TextView에 대입해준다.
 ```
