@@ -214,3 +214,13 @@ Activity에는 상단에 TextView와 recycleview를 배치한다.
 각 Item이 있을 content_rv_item 이름의 Layout 파일을 작성한다
 layout 파일에는 상단에 이미지와 텍스트를 넣는다.
 ```
+#### ContentRVAdapter kotlin File 작성
+![image](https://github.com/wonchihyeon/Database_Capstonedesign/assets/58906858/1e923414-3cb1-428d-9db0-a2de9d246892)
+```
+ContentRVAdapter를 작성한다.
+
+ContentRVAdapter의 멤버 함수로 onCreateViewHolder, onBindViewHolder, getItemCount를 implement 한다.
+onCreateViewHolder에는 생성한 content_rv_item layout을 하나씩 가져오는 것을 수행한다.
+onBindViewHolder는 생성한 item을 넣을 수 있도록 하는 작업을 수행한다.
+getItemCount는 생성한 Content Item의 개수가 몇 개인지 Item의 size를 리턴한다.
+```
