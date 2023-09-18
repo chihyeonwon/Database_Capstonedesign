@@ -1,4 +1,4 @@
-# 데이터베이스응용_캡스톤디자인 프로젝트
+ # 데이터베이스응용_캡스톤디자인 프로젝트
 컴퓨터공학과 캡스톤디자인 프로젝트 정리입니다.
 
 ## 23.09.06 프로젝트 개발 일지
@@ -223,4 +223,15 @@ ContentRVAdapter의 멤버 함수로 onCreateViewHolder, onBindViewHolder, getIt
 onCreateViewHolder에는 생성한 content_rv_item layout을 하나씩 가져오는 것을 수행한다.
 onBindViewHolder는 생성한 item을 넣을 수 있도록 하는 작업을 수행한다.
 getItemCount는 생성한 Content Item의 개수가 몇 개인지 Item의 size를 리턴한다.
+```
+#### ContentListActivity 작성
+![image](https://github.com/wonchihyeon/Database_Capstonedesign/assets/58906858/d2529c8e-c485-47ba-97e3-b59d2f0fdc3d)   
+```
+작성한 ContentRVAdapter를 ContentListActivity로 가져온다.
+
+activity_content_list에서 작성한 RecycleView를 findById로 가져와서 rv에 저장한다.
+
+rv에 item을 add 메서드로 넣고
+
+ContentRVAdapter 함수를 호출할때 생성한 item String 타입의 리스트를 매개변수로 넘겨준다.
 ```
