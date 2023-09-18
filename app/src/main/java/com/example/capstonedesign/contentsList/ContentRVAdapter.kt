@@ -1,13 +1,15 @@
 package com.example.capstonedesign.contentsList
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.capstonedesign.R
 
-class ContentRVAdapter(val items: ArrayList<ContentModel>) : RecyclerView.Adapter<ContentRVAdapter.Viewholder>() {
+class ContentRVAdapter(val context: Context, val items: ArrayList<ContentModel>) : RecyclerView.Adapter<ContentRVAdapter.Viewholder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ContentRVAdapter.Viewholder {
         // 만든 content_rv_item layout을 가져온다.
         val v = LayoutInflater.from(parent.context).inflate(R.layout.content_rv_item, parent, false)
@@ -27,6 +29,8 @@ class ContentRVAdapter(val items: ArrayList<ContentModel>) : RecyclerView.Adapte
     inner class Viewholder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun bindItems(item : ContentModel) {
             val contentTitle = itemView.findViewById<TextView>(R.id.textArea)
+            val imageViewArea = itemView.findViewById<ImageView>(R.id.imageArea)
+
             contentTitle.text = item.title
         }
     }

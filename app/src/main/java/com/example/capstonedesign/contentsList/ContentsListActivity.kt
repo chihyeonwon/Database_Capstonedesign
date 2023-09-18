@@ -23,7 +23,7 @@ class ContentsListActivity : AppCompatActivity() {
         items.add(ContentModel("https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fbtig9C%2Fbtq65UGxyWI%2FPRBIGUKJ4rjMkI7KTGrxtK%2Fimg.png","title3"))
 
         // Activity에 있는 rv의 adavpter를 가져와서 연결한다.
-        val rvAdapter = ContentRVAdapter(items)
+        val rvAdapter = ContentRVAdapter(baseContext, items)
         rv.adapter = rvAdapter
 
         rv.layoutManager = GridLayoutManager(this, 2)
