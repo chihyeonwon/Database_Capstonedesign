@@ -280,3 +280,19 @@ add.Item의 매개변수 또한 ContentModel의 데이터타입과 같이 수정
 content_rv_item의 각 요소에 id를 부여하고 (TextView의 id를 textArea)
 ContentRVAdapter의 bindItem 함수(items들 하나씩을 화면에 표시해주는 함수)에서 item의 title을 바인딩한 TextView에 대입해준다.
 ```
+#### Android Glide를 사용하여 imageUrl
+[imageUrl 소스](https://philosopher-chan.tistory.com/1235)   
+[Glide Implementation Github 주소](https://github.com/bumptech/glide)    
+#### Glide를 사용해서 웹 상의 이미지를 안드로이드 프로젝트에 보여주기
+![image](https://github.com/wonchihyeon/Database_Capstonedesign/assets/58906858/298a9434-11af-4df9-85ae-a876fda295b9)     
+![image](https://github.com/wonchihyeon/Database_Capstonedesign/assets/58906858/22e73e36-2d24-4487-9d91-10d7160d91b2)     
+```
+imageUrl은 웹에 있는 이미지의 주소를 복사해서 ContentModel의 첫 번째 인자에 넣어준다.
+웹에 있는 이미지를 안드로이드에 넣어주기 위해서 Glide를 사용한다.
+
+Glide Implementation을 build.gradle에 추가한다(app 수준)
+
+Glide를 사용하여 웹 상의 이미지 주소를(Glide.load)해서 imageViewArea에 넣어준다(Glide.into).
+
+웹 상의 이미지 데이터가 가져와져서 프로젝트에 나타나는 것을 확인했다.
+```
