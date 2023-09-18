@@ -1,5 +1,6 @@
 package com.example.capstonedesign.fragments
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -8,6 +9,7 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.findNavController
 import com.example.capstonedesign.R
+import com.example.capstonedesign.contentsList.ContentsListActivity
 import com.example.capstonedesign.databinding.FragmentTipBinding
 
 // TODO: Rename parameter arguments, choose names that match
@@ -34,6 +36,12 @@ class TipFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_tip, container, false)
+
+        // 첫 번째 ImageView 클릭 시 ContentsList로 화면이동
+        binding.category1.setOnClickListener {
+            val intent = Intent(context, ContentsListActivity::class.java)
+            startActivity(intent)
+        }
 
         binding.bookmarkTap.setOnClickListener {
             it.findNavController().navigate(R.id.action_tipFragment_to_bookmarkFragment)
