@@ -253,3 +253,21 @@ GridLayoutManager(this, 2) 2줄로 한다.
 
 다음에는 각 item을 데이터로 받아서 Text로 작성하는 작업을 한다.
 ```
+#### RecyclerView Data Flow Diagram
+![image](https://github.com/wonchihyeon/Database_Capstonedesign/assets/58906858/283a260a-559b-4763-a75f-646f02763af6)    
+![image](https://github.com/wonchihyeon/Database_Capstonedesign/assets/58906858/efbfafd4-8b7a-40b4-8fe0-2342af79f7ed)    
+```
+지금까지 생성한 ContentListActivity에서 Adaptor를 통한 데이터 전송의 흐름을 나타내면 다음과 같다.
+
+ContentListActivity에서 생성한 a,b,c 세 개의 item을 Adapter로 보내주고 ContentRVAdapter에서 item들을 하나씩 넘겨준다.
+ContentListActivity에서 생성한 rv adpater에 끝으로 연결한다.
+
+다음 작업으로 a, b, c item을 imgUrl과 title이 들어 있는 Model 로 넘긴다.
+```
+#### ContentModel Kotlin File 작성
+![image](https://github.com/wonchihyeon/Database_Capstonedesign/assets/58906858/ead315d4-1d36-434e-bba8-8566d35eb1d4)
+```
+ContentModel Kotlin File을 작성한다.
+
+data class () 안에 String 타입의 ImageUrl과 title을 넣어준다.
+```
