@@ -1,0 +1,30 @@
+<?xm    l version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+    android:orientation="vertical">
+
+    <ImageView
+        android:src="@drawable/main_icon_oneroom"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"/>
+
+    <TextView
+        android:text="Text Area"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:layout_height="wrap_content"/>
+
+    <ImageView
+        android:src="@drawable/bookmark_white"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center"
+        android:layout_width="30dp"
+        android:layout_height="30dp"/>
+
+    
+</LinearLayout>
