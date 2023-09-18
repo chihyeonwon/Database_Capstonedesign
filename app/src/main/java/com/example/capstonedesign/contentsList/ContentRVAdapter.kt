@@ -3,6 +3,7 @@ package com.example.capstonedesign.contentsList
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.capstonedesign.R
 
@@ -25,7 +26,8 @@ class ContentRVAdapter(val items: ArrayList<ContentModel>) : RecyclerView.Adapte
 
     inner class Viewholder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun bindItems(item : ContentModel) {
-
+            val contentTitle = itemView.findViewById<TextView>(R.id.textArea)
+            contentTitle.text = item.title
         }
     }
 
