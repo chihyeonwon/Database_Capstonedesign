@@ -235,3 +235,13 @@ rv에 item을 add 메서드로 넣고
 
 ContentRVAdapter 함수를 호출할때 생성한 item String 타입의 리스트를 매개변수로 넘겨준다.
 ```
+#### TipFragment 화면이동 구현
+#### Tip Fragment에서 첫 번째 Contents를 클릭했을 때 화면이동
+![image](https://github.com/wonchihyeon/Database_Capstonedesign/assets/58906858/38a5796b-180e-442c-b1c8-5c5b5745ce6e)
+```
+tip Fragment의 첫 번째 imageView에 category1 이름의 id를 부여하고
+이 imageView를 클릭했을 때 ContentsListActivity로 이동하도록 intent를 생성한다.
+
+Tip Fragment에서 첫 번째 ImageView를 클릭하면 ContentsListActivity로 이동하게 되고
+item 3개가 정상적으로 화면에 출력됨을 알 수 있다.
+```
