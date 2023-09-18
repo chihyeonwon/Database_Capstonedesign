@@ -98,6 +98,7 @@
                     android:layout_height="150dp">
 
                     <ImageView
+                        android:id="@+id/category1"
                         android:src="@drawable/main_icon_all"
                         android:layout_weight="1"
                         android:layout_width="120dp"
