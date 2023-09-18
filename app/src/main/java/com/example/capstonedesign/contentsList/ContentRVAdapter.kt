@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.capstonedesign.R
 
 class ContentRVAdapter(val context: Context, val items: ArrayList<ContentModel>) : RecyclerView.Adapter<ContentRVAdapter.Viewholder>() {
@@ -32,6 +33,11 @@ class ContentRVAdapter(val context: Context, val items: ArrayList<ContentModel>)
             val imageViewArea = itemView.findViewById<ImageView>(R.id.imageArea)
 
             contentTitle.text = item.title
+
+            // base Context Glide
+            Glide.with(context)
+                .load(item.imageUrl)
+                .into(imageViewArea)
         }
     }
 
