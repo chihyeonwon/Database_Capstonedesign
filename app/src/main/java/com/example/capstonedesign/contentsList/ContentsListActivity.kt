@@ -3,6 +3,7 @@ package com.example.capstonedesign.contentsList
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.LinearLayout
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.capstonedesign.R
@@ -25,6 +26,6 @@ class ContentsListActivity : AppCompatActivity() {
         val rvAdapter = ContentRVAdapter(items)
         rv.adapter = rvAdapter
 
-        rv.layoutManager = LinearLayoutManager(this)
+        rv.layoutManager = GridLayoutManager(this, 2)
     }
 }
