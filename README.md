@@ -1,4 +1,4 @@
- # 데이터베이스응용_캡스톤디자인 프로젝트
+![image](https://github.com/wonchihyeon/Database_Capstonedesign/assets/58906858/89d298a7-f184-432e-95b1-2d485688963c) # 데이터베이스응용_캡스톤디자인 프로젝트
 컴퓨터공학과 캡스톤디자인 프로젝트 정리입니다.
 
 ## 23.09.06 프로젝트 개발 일지
@@ -244,4 +244,12 @@ tip Fragment의 첫 번째 imageView에 category1 이름의 id를 부여하고
 
 Tip Fragment에서 첫 번째 ImageView를 클릭하면 ContentsListActivity로 이동하게 되고
 item 3개가 정상적으로 화면에 출력됨을 알 수 있다.
+```
+#### ContentListActivity GridLayoutManager
+![image](https://github.com/wonchihyeon/Database_Capstonedesign/assets/58906858/0870e152-23ea-4542-ac55-2dad0d0ab5d7)
+```
+Content를 Grid(격자)형태로 배치하기 위해서 Manager를 LinearLayoutManager에서 GridLayoutManager로 수정한다.
+GridLayoutManager(this, 2) 2줄로 한다.
+
+다음에는 각 item을 데이터로 받아서 Text로 작성하는 작업을 한다.
 ```
