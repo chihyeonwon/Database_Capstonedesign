@@ -1,5 +1,6 @@
 package com.example.capstonedesign.contentsList
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -46,7 +47,9 @@ class ContentsListActivity : AppCompatActivity() {
         rvAdapter.itemClick = object: ContentRVAdapter.ItemClick{
             override fun onClick(view: View, position: Int) {
 
-                Toast.makeText(baseContext,items[position].title, Toast.LENGTH_LONG).show()
+                val intent = Intent(this@ContentsListActivity,ContentShowActivity::class.java)
+                intent.putExtra("url",items[position].webUrl)
+                startActivity(intent)
 
             }
         }
