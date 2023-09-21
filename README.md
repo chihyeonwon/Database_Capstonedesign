@@ -298,3 +298,26 @@ Glide를 사용하여 웹 상의 이미지 주소를(Glide.load)해서 imageView
 ```
 웹 상의 이미지를 모두 추가하였다. imageurl 15개를 넣는 단순 작업이다.
 ```
+#### ContentModel 수정
+```
+webView 기능을 수행하기 위해
+ContentModel에 세 번째에 webUrl 데이터를 넣을 수 있도록 webUrl을 생성하고 웹 이미지가 있는 url을 세 번째 인자로 추가한다.
+```
+#### RVAdapter 수정
+```
+RVAdapter에 ItemClick OnClick 메서드를 구현하고 ContentsListActivity에서 Click 메서드를 호출한다.
+click메서드 안에 intent를 생성한다.
+intent할 Activity인 ContentShowActivity를 생성하고 ContentShowActivity는 webView를 넣는다.
+intent의 putExtra를 사용하여 선택한 아이템의 url 데이터를 넘겨주도록 설정했다.(intent.putExtra("url", item[position].webUrl)
+
+ContentShowActivity는 ContentList에서 선택한 아이템의 url 데이터를 받도록 설정했다.
+intent.getStringExtra("url")을 사용하여 가져온 webUrl을 getUrl 변수에 저장한다.
+
+webView를 findViewById로 찾고 webView.loadUrl을 사용하여 가져온 url(getUrl)을 load한다.
+```
+![image](https://github.com/wonchihyeon/Database_Capstonedesign/assets/58906858/0c0ecd2a-ae7f-4322-9f83-68248eb1d126)
+```
+이미지를 클릭했을 때 웹으로 이동하는 기능을 구현하였다.
+
+이제 Firebase의 데이터베이스를 사용한다.
+```
