@@ -2,7 +2,9 @@ package com.example.capstonedesign.contentsList
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.LinearLayout
+import android.widget.Toast
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -40,5 +42,13 @@ class ContentsListActivity : AppCompatActivity() {
         rv.adapter = rvAdapter
 
         rv.layoutManager = GridLayoutManager(this, 2)
+
+        rvAdapter.itemClick = object: ContentRVAdapter.ItemClick{
+            override fun onClick(view: View, position: Int) {
+
+                Toast.makeText(baseContext,items[position].title, Toast.LENGTH_LONG).show()
+
+            }
+        }
     }
 }
