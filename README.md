@@ -293,3 +293,8 @@ Glide Implementation을 build.gradle에 추가한다(app 수준)
 Glide를 사용하여 웹 상의 이미지 주소를(Glide.load)해서 imageViewArea에 넣어준다(Glide.into).
 웹 상의 이미지 데이터가 가져와져서 프로젝트에 나타나는 것을 확인했다.
 ```
+## 23.09.21 개발일지
+![image](https://github.com/wonchihyeon/Database_Capstonedesign/assets/58906858/83f83f3f-e2d4-40ce-8323-2abdc983df08)
+```
+웹 상의 이미지를 모두 추가하였다. imageurl 15개를 넣는 단순 작업이다.
+```
