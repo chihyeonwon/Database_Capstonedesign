@@ -323,7 +323,7 @@ webView를 findViewById로 찾고 webView.loadUrl을 사용하여 가져온 url(
 ```
 ## 23.09.22 개발일지
 #### Firebase Realtime Database 설정
-
+![image](https://github.com/wonchihyeon/Database_Capstonedesign/assets/58906858/ea53d17a-de49-4163-bd56-f0b248db705e)
 ```
 Firebase Realtime Database 데이터베이스를 만들고 Firebase 보안 규칙을 수정한다.
 ```
