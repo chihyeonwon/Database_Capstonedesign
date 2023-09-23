@@ -327,7 +327,9 @@ webView를 findViewById로 찾고 webView.loadUrl을 사용하여 가져온 url(
 ```
 Firebase Realtime Database 데이터베이스를 만들고 Firebase 보안 규칙을 수정한다.
 ```
-##### Firease Database에 push() 메서드로 자동으로 데이터 생성
+#### Firease Database에 push() 메서드로 자동으로 데이터 생성
+##### Firebase Database에 데이터 생성
+![image](https://github.com/wonchihyeon/Database_Capstonedesign/assets/58906858/77e15c3b-9bf0-4d0c-8c72-142e850fd337)
 ```
  // Write a message to the database
         val database = Firebase.database
