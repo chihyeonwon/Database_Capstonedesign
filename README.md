@@ -341,3 +341,8 @@ Firebase Realtime Database 데이터베이스를 만들고 Firebase 보안 규�
 다음은 Firebase 데이터베이스에 데이터 모델을 넣는 예시코드를 보였다. Model -> 데이터의 집합
 contents라는 이름의 root 밑에 임의의 이름에 데이터모델데이터(imageUrl, title, webUrl 데이터가 있는 ContentModel)를 넣었다.
 ```
+## 23.09.23 개발일지
+#### Firebase Database의 데이터 가져오기
+```
+Firebase Database의 데이터를 가져와서 프로젝트에 적용한다.
+```
