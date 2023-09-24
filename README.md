@@ -350,3 +350,16 @@ Firebase Database의 데이터를 가져와서 프로젝트에 적용한다.
 개발문서의 데이터 가져오기 부분을 참고하여 ValueEventListener를 작성한다.
 데이터를 가져오고 어뎁터를 동기화한다(rvAdapter.notifyDataSetChanged)
 ```
+## 23.09.24 개발일지
+#### category1과 category2를 구분해서 데이터 가져오기
+```
+ContentList의 두 번째 아이콘에 category2 이름의 id를 부여하고 두 번째 컨텐츠를 클릭했을 때 화면이동을 구현한다.
+화면이동 시에 category이름의 value값을 category1일 때는 category1을 전달하도록 하고 category2일때는 category2 값을 전달하도록
+설정한다.(intent.putExtra(category, "category1") and intent.putExtra(category, "category2")
+
+이 전달받는 값을 category 변수를 선언해서 받고 category1일 때와 category2일 때 데이터베이스에서 어떤 데이터를 가져올지 결정하는
+if 조건문을 건다.
+
+category1일 때는 contents에서 데이터를 가져오고 category2일때는 contents2에서 데이터를 가져오게끔 설정한다.
+
+```
