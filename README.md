@@ -343,6 +343,10 @@ contents라는 이름의 root 밑에 임의의 이름에 데이터모델데이�
 ```
 ## 23.09.23 개발일지
 #### Firebase Database의 데이터 가져오기
+![image](https://github.com/wonchihyeon/Database_Capstonedesign/assets/58906858/2a0e74e3-537e-4b2a-b3da-9ec081c6f84b)
 ```
 Firebase Database의 데이터를 가져와서 프로젝트에 적용한다.
+
+개발문서의 데이터 가져오기 부분을 참고하여 ValueEventListener를 작성한다.
+데이터를 가져오고 어뎁터를 동기화한다(rvAdapter.notifyDataSetChanged)
 ```
