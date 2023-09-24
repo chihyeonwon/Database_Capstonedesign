@@ -75,16 +75,6 @@ class ContentsListActivity : AppCompatActivity() {
 
         rv.layoutManager = GridLayoutManager(this, 2)
 
-        rvAdapter.itemClick = object: ContentRVAdapter.ItemClick{
-            override fun onClick(view: View, position: Int) {
-
-                val intent = Intent(this@ContentsListActivity,ContentShowActivity::class.java)
-                intent.putExtra("url",items[position].webUrl)
-                startActivity(intent)
-
-            }
-        }
-
        /* val myRef2 = database.getReference("contents2")
         myRef2.push()
             .setValue(ContentModel("title5","https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FblYPPY%2Fbtq66v0S4wu%2FRmuhpkXUO4FOcrlOmVG4G1%2Fimg.png","https://philosopher-chan.tistory.com/1235"))
