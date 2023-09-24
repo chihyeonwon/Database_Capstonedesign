@@ -30,29 +30,63 @@ class ContentsListActivity : AppCompatActivity() {
 
         // Write a message to the database
         val database = Firebase.database
-        val myRef = database.getReference("contents")
 
-        // Firebase Database의 데이터 읽기
-        val postListner = object: ValueEventListener {
-            override fun onDataChange(dataSnapshot: DataSnapshot) {
-                // dataModel에 있는 데이터를 하나씩 가져오는 부분
-                for(dataModel in dataSnapshot.children) {
-                    Log.d("ContentListActivity",dataSnapshot.toString())
+        val category = intent.getStringExtra("category")
 
-                    // 가져온 데이터를 컨텐츠 모델 형태로 받는 부분
-                    val item = dataModel.getValue(ContentModel::class.java)
-                    items.add(item!!)
+        // 클릭했을 때 넘어오는 category값이 category1일 때와 category2일 때를 구분
+        if(category == "category1") {
+            // category가 1이면 myref는 contents의 데이터를 가져오고
+            val myRef = database.getReference("contents")
+
+            // Firebase Database의 데이터 읽기
+            val postListner = object: ValueEventListener {
+                override fun onDataChange(dataSnapshot: DataSnapshot) {
+                    // dataModel에 있는 데이터를 하나씩 가져오는 부분
+                    for(dataModel in dataSnapshot.children) {
+                        Log.d("ContentListActivity",dataSnapshot.toString())
+
+                        // 가져온 데이터를 컨텐츠 모델 형태로 받는 부분
+                        val item = dataModel.getValue(ContentModel::class.java)
+                        items.add(item!!)
+                    }
+                    // 데이터를 받고 나서 어뎁터 동기화하는 부분
+                    rvAdapter.notifyDataSetChanged()
+                    Log.d("ContentListActivity",items.toString())
                 }
-                // 데이터를 받고 나서 어뎁터 동기화하는 부분
-                rvAdapter.notifyDataSetChanged()
-                Log.d("ContentListActivity",items.toString())
+
+                override fun onCancelled(databaseError: DatabaseError) {
+                    Log.w("ContentListActivity", "loadPost:onCancelled", databaseError.toException())
+                }
             }
-             
-            override fun onCancelled(databaseError: DatabaseError) {
-                Log.w("ContentListActivity", "loadPost:onCancelled", databaseError.toException())
+            myRef.addValueEventListener(postListner)
+
+        } else if(category == "category2") {
+            // category가 1이면 myref는 contents2의 데이터를 가져온다
+            val myRef = database.getReference("contents2")
+
+            // Firebase Database의 데이터 읽기
+            val postListner = object: ValueEventListener {
+                override fun onDataChange(dataSnapshot: DataSnapshot) {
+                    // dataModel에 있는 데이터를 하나씩 가져오는 부분
+                    for(dataModel in dataSnapshot.children) {
+                        Log.d("ContentListActivity",dataSnapshot.toString())
+
+                        // 가져온 데이터를 컨텐츠 모델 형태로 받는 부분
+                        val item = dataModel.getValue(ContentModel::class.java)
+                        items.add(item!!)
+                    }
+                    // 데이터를 받고 나서 어뎁터 동기화하는 부분
+                    rvAdapter.notifyDataSetChanged()
+                    Log.d("ContentListActivity",items.toString())
+                }
+
+                override fun onCancelled(databaseError: DatabaseError) {
+                    Log.w("ContentListActivity", "loadPost:onCancelled", databaseError.toException())
+                }
             }
+            myRef.addValueEventListener(postListner)
         }
-        myRef.addValueEventListener(postListner)
+
 
         // activity_contents_list에서 생성한 RecycleView를 가져온다.
         val rv : RecyclerView = findViewById(R.id.rv)
@@ -70,15 +104,17 @@ class ContentsListActivity : AppCompatActivity() {
 
             }
         }
-        /*myRef.push()
-            .setValue(ContentModel("title1","https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FblYPPY%2Fbtq66v0S4wu%2FRmuhpkXUO4FOcrlOmVG4G1%2Fimg.png","https://philosopher-chan.tistory.com/1235"))
-        myRef.push()
-            .setValue(ContentModel("title2","https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FznKK4%2Fbtq665AUWem%2FRUawPn5Wwb4cQ8BetEwN40%2Fimg.png","https://philosopher-chan.tistory.com/1236"))
-        myRef.push()
-            .setValue(ContentModel("title3","https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fbtig9C%2Fbtq65UGxyWI%2FPRBIGUKJ4rjMkI7KTGrxtK%2Fimg.png","https://philosopher-chan.tistory.com/1237"))
-        myRef.push()
-            .setValue(ContentModel("title4","https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FcOYyBM%2Fbtq67Or43WW%2F17lZ3tKajnNwGPSCLtfnE1%2Fimg.png","https://philosopher-chan.tistory.com/1238"))
-*/
+
+       /* val myRef2 = database.getReference("contents2")
+        myRef2.push()
+            .setValue(ContentModel("title5","https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FblYPPY%2Fbtq66v0S4wu%2FRmuhpkXUO4FOcrlOmVG4G1%2Fimg.png","https://philosopher-chan.tistory.com/1235"))
+        myRef2.push()
+            .setValue(ContentModel("title6","https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FznKK4%2Fbtq665AUWem%2FRUawPn5Wwb4cQ8BetEwN40%2Fimg.png","https://philosopher-chan.tistory.com/1236"))
+        myRef2.push()
+            .setValue(ContentModel("title7","https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fbtig9C%2Fbtq65UGxyWI%2FPRBIGUKJ4rjMkI7KTGrxtK%2Fimg.png","https://philosopher-chan.tistory.com/1237"))
+        myRef2.push()
+            .setValue(ContentModel("title8","https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FcOYyBM%2Fbtq67Or43WW%2F17lZ3tKajnNwGPSCLtfnE1%2Fimg.png","https://philosopher-chan.tistory.com/1238"))*/
+
         /*items.add(ContentModel("title1","https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FblYPPY%2Fbtq66v0S4wu%2FRmuhpkXUO4FOcrlOmVG4G1%2Fimg.png","https://philosopher-chan.tistory.com/1235"))
         items.add(ContentModel("title2","https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FznKK4%2Fbtq665AUWem%2FRUawPn5Wwb4cQ8BetEwN40%2Fimg.png","https://philosopher-chan.tistory.com/1236"))
         items.add(ContentModel("title3","https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fbtig9C%2Fbtq65UGxyWI%2FPRBIGUKJ4rjMkI7KTGrxtK%2Fimg.png","https://philosopher-chan.tistory.com/1237"))
