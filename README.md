@@ -352,6 +352,11 @@ Firebase Database의 데이터를 가져와서 프로젝트에 적용한다.
 ```
 ## 23.09.24 개발일지
 #### category1과 category2를 구분해서 데이터 가져오기
+![image](https://github.com/wonchihyeon/Database_Capstonedesign/assets/58906858/9e46c122-cff7-47f2-bbb3-8aaa72b4133c)
+#### category1
+![image](https://github.com/wonchihyeon/Database_Capstonedesign/assets/58906858/f11f1d39-fef3-4204-acb0-feef41231e5b)
+#### category2
+![image](https://github.com/wonchihyeon/Database_Capstonedesign/assets/58906858/d34cb512-cf63-47e2-b54e-ed272376a0c0)
 ```
 ContentList의 두 번째 아이콘에 category2 이름의 id를 부여하고 두 번째 컨텐츠를 클릭했을 때 화면이동을 구현한다.
 화면이동 시에 category이름의 value값을 category1일 때는 category1을 전달하도록 하고 category2일때는 category2 값을 전달하도록
