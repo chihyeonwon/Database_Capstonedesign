@@ -40,13 +40,13 @@ class TipFragment : Fragment() {
         // 첫 번째 ImageView 클릭 시 ContentsList로 화면이동
         binding.category1.setOnClickListener {
             val intent = Intent(context, ContentsListActivity::class.java)
-            intent.putExtra("category1","category1")
+            intent.putExtra("category","category1")
             startActivity(intent)
         }
 
         binding.category2.setOnClickListener {
             val intent = Intent(context, ContentsListActivity::class.java)
-            intent.putExtra("category2","category2")
+            intent.putExtra("category","category2")
             startActivity(intent)
         }
 
