@@ -376,3 +376,8 @@ board 패키지 밑에 게시판 정보를 쓰는 BoardWrite Activity를 생성�
 
 두 개의 EditText와 ImageView를 세로로 생성해줬다.
 ```
+#### TalkFragment에 글쓰기 버튼 추가
+![image](https://github.com/wonchihyeon/Database_Capstonedesign/assets/58906858/246234c5-4c7f-4e35-adab-7edfa20feb78)
+```
+TalkFragment의 오른쪽 맨 아래에 글쓰기 버튼 아이콘을 추가한다.
+```
