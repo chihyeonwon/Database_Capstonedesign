@@ -366,5 +366,13 @@ ContentList의 두 번째 아이콘에 category2 이름의 id를 부여하고 �
 if 조건문을 건다.
 
 category1일 때는 contents에서 데이터를 가져오고 category2일때는 contents2에서 데이터를 가져오게끔 설정한다.
+```
+## 23.09.25 개발일지
+#### BoardWrite Activity Layout
+![image](https://github.com/wonchihyeon/Database_Capstonedesign/assets/58906858/98753241-0c7f-4d43-a84e-6e7d436a8dec)
+```
+게시판 코드가 들어갈 board 패키지를 생성한다.
+board 패키지 밑에 게시판 정보를 쓰는 BoardWrite Activity를 생성한다.
 
+두 개의 EditText와 ImageView를 세로로 생성해줬다.
 ```
