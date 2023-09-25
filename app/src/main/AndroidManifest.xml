@@ -15,6 +15,9 @@
         android:theme="@style/Theme.CapstoneDesign"
         tools:targetApi="31">
         <activity
+            android:name=".board.BoardWriteActivity"
+            android:exported="false" />
+        <activity
             android:name=".contentsList.ContentShowActivity"
             android:exported="false" />
         <activity
