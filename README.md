@@ -396,3 +396,13 @@ Firebase RealTime Database의 board 이름 밑에 게시글(BoardWrite Activity)
 
 또 데이터베이스의 path를 저장하는 것을 모아두기 위해 utils 패키지 밑에 FBRef kotlin class File을 작성한다.
 ```
+#### 입력 버튼 기능 구현
+![image](https://github.com/wonchihyeon/Database_Capstonedesign/assets/58906858/cec8f75b-ad38-4d20-bb6c-1361ff8679bc)       
+#### Log.d(TAG, title), Log.d(TAG, content)
+![image](https://github.com/wonchihyeon/Database_Capstonedesign/assets/58906858/d93e1d17-b044-46a5-9aba-7b1225ea068c)     
+```
+BoardWrite Activity의 각 요소에 각각의 이름을 부여하고 입력 버튼(writeBtn)을 클릭했을 때
+제목(titleArea), 내용(contentArea)에 입력한 내용을 각각 title, content 변수에 바인딩을 이용하여
+저장한 후 로그를 찍어 보았다. Log.d(TAG, title), Log.d(TAG, content)
+입력한 내용이 로그에 잘 찍어 나오는 것을 확인했다.
+```
