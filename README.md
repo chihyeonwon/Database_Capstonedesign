@@ -381,3 +381,11 @@ board 패키지 밑에 게시판 정보를 쓰는 BoardWrite Activity를 생성�
 ```
 TalkFragment의 오른쪽 맨 아래에 글쓰기 버튼 아이콘을 추가한다.
 ```
+## 23.09.26 개발일지
+#### BoardWrite Activity Layout 수정
+![image](https://github.com/wonchihyeon/Database_Capstonedesign/assets/58906858/153ac007-3c89-41f4-af92-7e438d40f503)
+```
+BoardWrite Activity Layout을 수정했다.
+
+제목, 내용을 입력하는 EditText부분과 이미지를 업로드하는 ImageView, 입력 버튼을 만들었다.
+```
