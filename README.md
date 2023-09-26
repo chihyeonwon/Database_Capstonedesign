@@ -389,3 +389,10 @@ BoardWrite Activity Layout을 수정했다.
 
 제목, 내용을 입력하는 EditText부분과 이미지를 업로드하는 ImageView, 입력 버튼을 만들었다.
 ```
+#### Board Database 설정
+```
+Firebase RealTime Database의 board 이름 밑에 게시글(BoardWrite Activity)에서 입력한 데이터가 들어가도록 설정한다.
+바인딩을 사용하기 위해서 BoardWrite Activity를 layout으로 감싼다.
+
+또 데이터베이스의 path를 저장하는 것을 모아두기 위해 utils 패키지 밑에 FBRef kotlin class File을 작성한다.
+```
