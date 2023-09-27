@@ -27,6 +27,8 @@ class ContentsListActivity : AppCompatActivity() {
 
         // 아이템들을 넣는다.
         val items = ArrayList<ContentModel>()
+        // 아이템 키 값을 저장하는 변수
+        val itemKeyList = ArrayList<String>()
 
         // Activity에 있는 rv의 adavpter를 가져와서 연결한다.
         val rvAdapter = ContentRVAdapter(baseContext, items)
@@ -55,6 +57,7 @@ class ContentsListActivity : AppCompatActivity() {
                     // 가져온 데이터를 컨텐츠 모델 형태로 받는 부분
                     val item = dataModel.getValue(ContentModel::class.java)
                     items.add(item!!)
+                    itemKeyList.add(dataModel.key.toString())
                 }
                 // 데이터를 받고 나서 어뎁터 동기화하는 부분
                 rvAdapter.notifyDataSetChanged()
