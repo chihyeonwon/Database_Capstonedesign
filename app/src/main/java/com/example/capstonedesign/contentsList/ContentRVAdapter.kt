@@ -21,7 +21,7 @@ class ContentRVAdapter(val context: Context, val items: ArrayList<ContentModel>,
 
     override fun onBindViewHolder(holder: ContentRVAdapter.Viewholder, position: Int){
         // item을 넣을 수 있도록 연결(Binding)
-        holder.bindItems(items[position])
+        holder.bindItems(items[position], keyList[position])
     }
 
     override fun getItemCount(): Int {
@@ -30,7 +30,7 @@ class ContentRVAdapter(val context: Context, val items: ArrayList<ContentModel>,
     }
 
     inner class Viewholder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        fun bindItems(item : ContentModel) {
+        fun bindItems(item : ContentModel, key: String) {
 
             itemView.setOnClickListener{
                 val intent = Intent(context, ContentShowActivity::class.java)
