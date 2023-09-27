@@ -31,7 +31,7 @@ class ContentsListActivity : AppCompatActivity() {
         val itemKeyList = ArrayList<String>()
 
         // Activity에 있는 rv의 adavpter를 가져와서 연결한다.
-        val rvAdapter = ContentRVAdapter(baseContext, items)
+        val rvAdapter = ContentRVAdapter(baseContext, items, itemKeyList)
 
         // Write a message to the database
         val database = Firebase.database
