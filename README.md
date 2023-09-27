@@ -407,7 +407,10 @@ BoardWrite Activity의 각 요소에 각각의 이름을 부여하고 입력 버
 입력한 내용이 로그에 잘 찍어 나오는 것을 확인했다.
 ```
 ## 23.09.27 개발일지
-
+#### item key 값을 저장하는 itemKeyList 생성
 ```
+itemKeyList 생성하고 itemKeyList에 dataModel의 key를 넣어준다.
+생성한 itemKeyList를 Adapter에 넘겨준다.
 
+Adapter에서 keyList의 position을 받아서 keyList 중에 key를 하나씩 가져온다.
 ```
