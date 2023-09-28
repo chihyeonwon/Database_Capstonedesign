@@ -58,9 +58,7 @@ class ContentRVAdapter(val context: Context,
                 Toast.makeText(context, key, Toast.LENGTH_LONG).show()
 
                 if(bookmarkIdList.contains(key)){
-                    // 북마크가 있을 때
-                    bookmarkIdList.remove(key)
-
+                    // 북마크가 있을 때 삭제
                     FBRef.bookmarkRef
                         .child(FBAuth.getUid())
                         .child(key)
