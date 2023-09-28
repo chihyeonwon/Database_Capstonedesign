@@ -434,3 +434,39 @@ bookmark_list 밑에 있는 데이터들을 가져와서 uid 아래에 데이터
 ContentListActivity에서 getBookmarkData 함수를 생성하고 전에 사용한 postListner를 수정하여 북마크 데이터를
 불러온다.
 ```
+#### 북마크 데이터 모델로 수정하기
+![image](https://github.com/wonchihyeon/Database_Capstonedesign/assets/58906858/3c916d2d-2649-4108-a57b-f50bca6cc224)     
+![image](https://github.com/wonchihyeon/Database_Capstonedesign/assets/58906858/834d0ddd-cc8a-40b7-bc96-b839cccaabd4)      
+##### ContentListActivity .child(FirebaseAuth.getUid())
+![image](https://github.com/wonchihyeon/Database_Capstonedesign/assets/58906858/5a86fd1a-45fe-4438-a489-006805cbb911)
+```
+북마크의 데이터를 데이터 모델로 가공하여 사용한다.
+
+contentList 패키지 밑에 BookmarkModel Kotlin File을 작성한다.
+data class 안에 Boolean 타입의 BookmarkModel 변수를 null 값으로 저장하면서 선언한다.
+
+ContentRVAdpater 파일의 북마크 이미지를 클릭했을 때 데이터베이스에 저장하는 부분 (.setValue)에
+생성한 BookmarkModel의 값을 true 로 설정하고 매개변수로 데이터를 전달한다.
+
+키와 값이 이상한데 uid 밑의 값을 키와 값으로 분리하기 위해서
+ContentListActivity에서 값을 받아올때 uid 밑의 값들을 키와 값으로 받아온다.(.child(FirebaseAuth.getUid())
+Log를 찍어봤을 때 key값과 value값이 잘 나오고 있는 것을 확인할 수 있다.
+
+컨텐츠의 id값을 키로 받아오는 것을 알 수 있다.
+
+북마크 리스트의 id값들을 저장하는 bookmarkIdList를 생성한다.
+
+bookmarkIdList에 북마크 컨텐츠의 id 값을 넣어준다.(add(dataModel.key.toString())
+
+어댑터로 이 bookmarkIdList를 넘겨서 리스트에 해당하는 북마크id가 있으면 북마크를 까맣게하고
+없다면 북마크를 하얗게 하는 부분을 처리한다.
+
+어댑터에 bookmarkIdList를 받고 어댑터를 쓰는 ContentListActivity에도 추가한다.
+
+어댑터를 전역변수(lateinit val)로 선언하면서
+getBookmarkData 함수에서도 쓸 수 있도록 동기화 작업(rvAdapter.notifyDataSetChanged())을 수행한다.
+
+bookmarkListId 리스트에서 key 값(Content의 id)을 포함하면
+bookmarkArea의 ImageSource를 R.drawable.bookmark_color 검정색 북마크를 표시하도록 하고
+포함하지 않으면 R.drawable.bookmark_white 하얀색 북마크를 표시하도록 로직을 처리한다.
+```
