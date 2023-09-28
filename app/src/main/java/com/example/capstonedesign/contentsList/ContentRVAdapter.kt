@@ -11,6 +11,8 @@ import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.capstonedesign.R
+import com.example.capstonedesign.utils.FBAuth
+import com.example.capstonedesign.utils.FBRef
 
 class ContentRVAdapter(val context: Context, val items: ArrayList<ContentModel>, val keyList : ArrayList<String>)
     : RecyclerView.Adapter<ContentRVAdapter.Viewholder>() {
@@ -45,6 +47,8 @@ class ContentRVAdapter(val context: Context, val items: ArrayList<ContentModel>,
 
             bookmarkArea.setOnClickListener {
                 Toast.makeText(context, key, Toast.LENGTH_LONG).show()
+
+                FBRef.bookmarkRef.child(FBAuth.getUid()).child(key).setValue("Good")
             }
 
             contentTitle.text = item.title
