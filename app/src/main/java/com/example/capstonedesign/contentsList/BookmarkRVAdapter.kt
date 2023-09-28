@@ -54,24 +54,6 @@ class BookmarkRVAdapter(val context: Context,
                 bookmarkArea.setImageResource(R.drawable.bookmark_white)
             }
 
-            bookmarkArea.setOnClickListener {
-                Toast.makeText(context, key, Toast.LENGTH_LONG).show()
-
-                if(bookmarkIdList.contains(key)){
-                    // 북마크가 있을 때 삭제
-                    FBRef.bookmarkRef
-                        .child(FBAuth.getUid())
-                        .child(key)
-                        .removeValue()
-                } else {
-                    // 북마크가 없을 때
-                    FBRef.bookmarkRef
-                        .child(FBAuth.getUid())
-                        .child(key)
-                        .setValue(BookmarkModel(true))
-                }
-            }
-
             contentTitle.text = item.title
 
             // base Context Glide
