@@ -414,3 +414,15 @@ itemKeyList 생성하고 itemKeyList에 dataModel의 key를 넣어준다.
 
 Adapter에서 keyList의 position을 받아서 keyList 중에 key를 하나씩 가져온다.
 ```
+## 23.09.28 개발일지
+#### 북마크 데이터 저장
+```
+Firebase에서 uid를 받아오는 부분을 utils 패키지 밑의 FBAuth kotlin File에서 getUid 함수를 생성하고
+리턴값으로 FirebaseAuth.getInstance()의 currentUser.uid 현재 로그인한 사용자의 uid 값을 반환하도록 한다.
+
+utils의 FBRef 파일에 bookmarkRef 이름의 데이터베이스 주소를 생성하는 부분을 넣어준다. (path: bookmark_list)
+
+어댑터에서 FBRef.bookmarkRef.child(FBAuth.getUid()).child(key).setValue(Good) 즉
+
+데이터베이스에 bookmark_list 밑에 uid 밑에 key에 Good이라는 값을 저장했다.
+```
