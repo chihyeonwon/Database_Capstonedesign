@@ -48,7 +48,10 @@ class ContentRVAdapter(val context: Context, val items: ArrayList<ContentModel>,
             bookmarkArea.setOnClickListener {
                 Toast.makeText(context, key, Toast.LENGTH_LONG).show()
 
-                FBRef.bookmarkRef.child(FBAuth.getUid()).child(key).setValue("Good")
+                FBRef.bookmarkRef
+                    .child(FBAuth.getUid())
+                    .child(key)
+                    .setValue(BookmarkModel(true))
             }
 
             contentTitle.text = item.title
