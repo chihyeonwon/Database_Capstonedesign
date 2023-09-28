@@ -497,3 +497,14 @@ ContentRVAdapter에서 bookmark를 setOnClickListener 클릭했을 때 북마크
 
 다음은 북마크를 동적으로 삭제하는 것을 구현한다.
 ```
+#### 북마크 동적 삭제 기능 구현
+![image](https://github.com/wonchihyeon/Database_Capstonedesign/assets/58906858/dc774fea-e0fa-48ac-b284-ff532e32f3f5)      
+![image](https://github.com/wonchihyeon/Database_Capstonedesign/assets/58906858/89bdaf17-9a14-4c31-a471-1a32bc0d0b4f)     
+![image](https://github.com/wonchihyeon/Database_Capstonedesign/assets/58906858/ee8ee419-e0d6-432e-a83e-d78d79ee3d6f)
+![image](https://github.com/wonchihyeon/Database_Capstonedesign/assets/58906858/6c2a2f72-7315-4f83-b651-5f9a7175d298)
+```
+getBookmarkData에서 onDataChange 기존의 데이터가 변경될 때 리스트에 들어있는 데이터를 클리어해주고
+리스트에 있는 데이터를 받아온 다음 리스트를 업데이트하도록 수정한다.
+
+북마크 수정, 삭제 기능이 정상적으로 구현됨을 확인했다.
+```
