@@ -426,3 +426,11 @@ utils의 FBRef 파일에 bookmarkRef 이름의 데이터베이스 주소를 생�
 
 데이터베이스에 bookmark_list 밑에 uid 밑에 key에 Good이라는 값을 저장했다.
 ```
+#### 북마크 데이터 불러오기
+```
+bookmark_list 밑에 있는 데이터들을 가져와서 uid 아래에 데이터의 key값이 있다면 ui를 검정색으로 칠해주고
+아니라면 흰색으로 그대로 놔두는 작업을 진행한다.
+
+ContentListActivity에서 getBookmarkData 함수를 생성하고 전에 사용한 postListner를 수정하여 북마크 데이터를
+불러온다.
+```
