@@ -96,6 +96,7 @@ class ContentsListActivity : AppCompatActivity() {
                     bookmarkIdList.add(dataModel.key.toString())
                 }
                 Log.d("ContentListActivity", bookmarkIdList.toString())
+                rvAdapter.notifyDataSetChanged()
             }
 
             override fun onCancelled(databaseError: DatabaseError) {
