@@ -25,6 +25,8 @@ class ContentsListActivity : AppCompatActivity() {
     lateinit var myRef : DatabaseReference
 
     val bookmarkIdList = mutableListOf<String>()
+
+    lateinit var rvAdapter: ContentRVAdapter
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_contents_list)
@@ -35,7 +37,7 @@ class ContentsListActivity : AppCompatActivity() {
         val itemKeyList = ArrayList<String>()
 
         // Activity에 있는 rv의 adavpter를 가져와서 연결한다.
-        val rvAdapter = ContentRVAdapter(baseContext, items, itemKeyList, bookmarkIdList)
+        rvAdapter = ContentRVAdapter(baseContext, items, itemKeyList, bookmarkIdList)
 
         // Write a message to the database
         val database = Firebase.database
