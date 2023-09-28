@@ -21,11 +21,13 @@ import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 
 class ContentsListActivity : AppCompatActivity() {
+
+    lateinit var myRef : DatabaseReference
+
+    val bookmarkIdList = mutableListOf<String>()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_contents_list)
-
-        lateinit var myRef : DatabaseReference
 
         // 아이템들을 넣는다.
         val items = ArrayList<ContentModel>()
@@ -89,8 +91,7 @@ class ContentsListActivity : AppCompatActivity() {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 // dataModel에 있는 데이터를 하나씩 가져오는 부분
                 for(dataModel in dataSnapshot.children) {
-                    Log.d("getBookmarkData", dataModel.key.toString())
-                    Log.d("getBookmarkData", dataModel.toString())
+                    bookmarkIdList.add(dataModel.key.toString())
                 }
 
             }
