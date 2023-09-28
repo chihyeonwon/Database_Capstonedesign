@@ -508,3 +508,13 @@ getBookmarkData에서 onDataChange 기존의 데이터가 변경될 때 리스�
 
 북마크 수정, 삭제 기능이 정상적으로 구현됨을 확인했다.
 ```
+#### 카테고리와 북마크 데이터들을 북마크 Fragment로 가져온다.
+```
+북마크 탭을 구현하기 위해서 일단 데이터베이스 상의 경로 contents와 contents2의 경로를 각각
+FBRef 파일의 category1, category2 변수에 저장한다.
+
+Bookmark Fragment 파일에 카테고리의 데이터들을 모두 가져오는 getCategoryData 함수를 생성하고
+postListener 부분의 코드를 그대로 복사한다음 FBRef.category1, category2로 수정한다.
+
+북마크의 데이터들을 모두 가져오는 getBookmarkData() 함수를 ContentListActivity에서 가져온다.
+```
