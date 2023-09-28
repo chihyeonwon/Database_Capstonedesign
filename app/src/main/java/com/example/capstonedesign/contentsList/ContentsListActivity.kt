@@ -11,6 +11,8 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.capstonedesign.R
+import com.example.capstonedesign.utils.FBAuth
+import com.example.capstonedesign.utils.FBRef
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.DatabaseReference
@@ -78,5 +80,25 @@ class ContentsListActivity : AppCompatActivity() {
 
         rv.layoutManager = GridLayoutManager(this, 2)
 
+        getBookmarkData()
+    }
+
+    // 북마크 데이터를 가져오는 getBookmarkData 함수
+    private fun getBookmarkData() {
+        val postListner = object: ValueEventListener {
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
+                // dataModel에 있는 데이터를 하나씩 가져오는 부분
+                for(dataModel in dataSnapshot.children) {
+                    Log.d("getBookmarkData", dataModel.key.toString())
+                    Log.d("getBookmarkData", dataModel.toString())
+                }
+
+            }
+
+            override fun onCancelled(databaseError: DatabaseError) {
+                Log.w("ContentListActivity", "loadPost:onCancelled", databaseError.toException())
+            }
+        }
+        FBRef.bookmarkRef.child(FBAuth.getUid()).addValueEventListener(postListner)
     }
 }
