@@ -27,7 +27,7 @@ class ContentRVAdapter(val context: Context,
 
     override fun onBindViewHolder(holder: ContentRVAdapter.Viewholder, position: Int){
         // item을 넣을 수 있도록 연결(Binding)
-        holder.bindItems(items[position], keyList[position], bookmarkIdList[position])
+        holder.bindItems(items[position], keyList[position])
     }
 
     override fun getItemCount(): Int {
@@ -36,7 +36,7 @@ class ContentRVAdapter(val context: Context,
     }
 
     inner class Viewholder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        fun bindItems(item : ContentModel, key: String, bookmark : String) {
+        fun bindItems(item : ContentModel, key: String) {
 
             itemView.setOnClickListener{
                 val intent = Intent(context, ContentShowActivity::class.java)
@@ -48,6 +48,11 @@ class ContentRVAdapter(val context: Context,
             val imageViewArea = itemView.findViewById<ImageView>(R.id.imageArea)
             val bookmarkArea = itemView.findViewById<ImageView>(R.id.bookmarkArea)
 
+            if(bookmarkIdList.contains(key)) {
+                bookmarkArea.setImageResource(R.drawable.bookmark_color)
+            } else {
+                bookmarkArea.setImageResource(R.drawable.bookmark_white)
+            }
 
             bookmarkArea.setOnClickListener {
                 Toast.makeText(context, key, Toast.LENGTH_LONG).show()
