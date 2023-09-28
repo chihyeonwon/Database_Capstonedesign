@@ -52,9 +52,6 @@ class BookmarkFragment : Fragment() {
     ): View? {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_bookmark, container, false)
 
-        // 전체 카테고리에 있는 컨텐츠 데이터들을 다 가져온다.
-        getCategoryData()
-
         // 사용자가 북마크한 정보를 다 가져온다.
         getBookmarkData()
 
@@ -91,8 +88,12 @@ class BookmarkFragment : Fragment() {
                 // dataModel에 있는 데이터를 하나씩 가져오는 부분
                 for(dataModel in dataSnapshot.children) {
                     val item = dataModel.getValue(ContentModel::class.java)
-                    items.add(item!!)
-                    itemKeyList.add(dataModel.key.toString())
+
+                    // 전체 컨텐츠 중에서, 사용자가 북마크한 정보만 보여준다.
+                    if(bookmarkIdList.contains(dataModel.key.toString())) {
+                        items.add(item!!)
+                        itemKeyList.add(dataModel.key.toString())
+                    }
                 }
                 rvAdapter.notifyDataSetChanged()
             }
@@ -113,7 +114,8 @@ class BookmarkFragment : Fragment() {
                 for (dataModel in dataSnapshot.children) {
                     bookmarkIdList.add(dataModel.key.toString())
                 }
-
+                // 전체 카테고리에 있는 컨텐츠 데이터들을 다 가져온다.
+                getCategoryData()
             }
 
             override fun onCancelled(databaseError: DatabaseError) {
