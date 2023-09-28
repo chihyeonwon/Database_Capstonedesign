@@ -470,3 +470,20 @@ bookmarkListId 리스트에서 key 값(Content의 id)을 포함하면
 bookmarkArea의 ImageSource를 R.drawable.bookmark_color 검정색 북마크를 표시하도록 하고
 포함하지 않으면 R.drawable.bookmark_white 하얀색 북마크를 표시하도록 로직을 처리한다.
 ```
+#### 23.09.28 북마크 작업 내용 정리
+![image](https://github.com/wonchihyeon/Database_Capstonedesign/assets/58906858/ebe4a6b8-9a42-4dad-a443-a638fc84258a)
+![image](https://github.com/wonchihyeon/Database_Capstonedesign/assets/58906858/f0ee9c3a-4628-4c5d-9371-d86f02fdd10c)     
+```
+작업내용을 정리하자면 북마크로 넘겨줄 때의 데이터를 데이터모델(Boolean 형식의 값)으로 전달하고
+데이터베이스에서 받아올 때 FirebaseAuth uid 밑의 문서들을 키와 값으로 분리하여 받아온다.
+
+선택했을 때 북마크의 컨텐츠 id 값을 리스트로 저장한 다음 어뎁터로 그 리스트를 넘겨주고
+리스트와 키값을 비교하여 리스트에 키값이 포함되어 있다면(이미 북마크로 저장해 두었다면)
+까만 이미지로 변경하고 포함되어 있지 않다면 하얀 이미지로 설정하는 작업을 수행하였다.
+
+컨텐츠 id의 키값 1, 2번째 값이 북마크 리스트의 uid 밑의 키값과 같기 때문에 두 개는 까맣게
+두 개는 하얗게 나오는 것을 알 수 있고 또 북마크를 눌렀을 때 키값(컨텐츠id)이 북마크 리스트에
+들어가게 되어 까맣게 변하는 것을 알 수 있다.
+
+다음은 북마크를 삭제하는 작업(하얀 ui로 변경)을 수행한다.
+```
