@@ -57,10 +57,19 @@ class ContentRVAdapter(val context: Context,
             bookmarkArea.setOnClickListener {
                 Toast.makeText(context, key, Toast.LENGTH_LONG).show()
 
-                FBRef.bookmarkRef
-                    .child(FBAuth.getUid())
-                    .child(key)
-                    .setValue(BookmarkModel(true))
+                if(bookmarkIdList.contains(key)){
+                    // 북마크가 있을 때
+                    FBRef.bookmarkRef
+                        .child(FBAuth.getUid())
+                        .child(key)
+                        .removeValue()
+                } else {
+                    // 북마크가 없을 때
+                    FBRef.bookmarkRef
+                        .child(FBAuth.getUid())
+                        .child(key)
+                        .setValue(BookmarkModel(true))
+                }
             }
 
             contentTitle.text = item.title
