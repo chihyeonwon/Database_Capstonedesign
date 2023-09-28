@@ -518,3 +518,18 @@ postListener 부분의 코드를 그대로 복사한다음 FBRef.category1, cate
 
 북마크의 데이터들을 모두 가져오는 getBookmarkData() 함수를 ContentListActivity에서 가져온다.
 ```
+#### 전체 컨텐츠 중에서, 사용자가 북마크한 정보만 보여준다.
+![image](https://github.com/wonchihyeon/Database_Capstonedesign/assets/58906858/2523882e-c7ed-4b4a-b328-3e3acd8d3275)
+#### title 3번을 추가
+![image](https://github.com/wonchihyeon/Database_Capstonedesign/assets/58906858/33e3d342-405f-4cee-8669-9d24e6935aab)
+```
+어뎁터로 컨텐츠 데이터와 북마크 데이터를 넘겨준다음 데이터들을 어댑터에서 처리한다.
+
+BookmarkADApter kotlin File을 생성하고 기존에 만들었던 ContentRVAdapter를 복사한다.
+
+BookmarkFragment Activity에서 RecyclerView를 생성하고 BookmarkFragment에서
+생성한 어댑터를 연결한다.
+
+북마크한 데이터만 가져오도록 수정하기 위해서 북마크id 리스트가 키값을 포함하고 있다면
+그 item과 keyList를 받도록 로직을 수정한다. 
+```
