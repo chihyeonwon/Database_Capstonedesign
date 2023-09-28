@@ -12,6 +12,7 @@ import com.example.capstonedesign.R
 import com.example.capstonedesign.contentsList.ContentModel
 import com.example.capstonedesign.databinding.FragmentBookmarkBinding
 import com.example.capstonedesign.databinding.FragmentHomeBinding
+import com.example.capstonedesign.utils.FBAuth
 import com.example.capstonedesign.utils.FBRef
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -42,10 +43,11 @@ class BookmarkFragment : Fragment() {
     ): View? {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_bookmark, container, false)
 
-        // 전체 카테고리에 있는 컨텐츠 데이터 들을 다 가져온다.
+        // 전체 카테고리에 있는 컨텐츠 데이터들을 다 가져온다.
         getCategoryData()
 
         // 사용자가 북마크한 정보를 다 가져온다.
+        getBookmarkData()
 
         // 전체 컨텐츠 중에서, 사용자가 북마크한 정보만 보여준다.
 
@@ -85,4 +87,21 @@ class BookmarkFragment : Fragment() {
         FBRef.category2.addValueEventListener(postListner)
     }
 
+    private fun getBookmarkData() {
+        val postListner = object : ValueEventListener {
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
+
+                // dataModel에 있는 데이터를 하나씩 가져오는 부분
+                for (dataModel in dataSnapshot.children) {
+
+                }
+
+            }
+
+            override fun onCancelled(databaseError: DatabaseError) {
+                Log.w("ContentListActivity", "loadPost:onCancelled", databaseError.toException())
+            }
+        }
+        FBRef.bookmarkRef.child(FBAuth.getUid()).addValueEventListener(postListner)
+    }
 }
