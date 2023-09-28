@@ -86,11 +86,14 @@ class ContentsListActivity : AppCompatActivity() {
 
         getBookmarkData()
     }
-
     // 북마크 데이터를 가져오는 getBookmarkData 함수
     private fun getBookmarkData() {
         val postListner = object: ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
+
+                // 북마크리스트 초기화
+                bookmarkIdList.clear()
+
                 // dataModel에 있는 데이터를 하나씩 가져오는 부분
                 for(dataModel in dataSnapshot.children) {
                     bookmarkIdList.add(dataModel.key.toString())
