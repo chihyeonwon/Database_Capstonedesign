@@ -35,7 +35,7 @@ class ContentsListActivity : AppCompatActivity() {
         val itemKeyList = ArrayList<String>()
 
         // Activity에 있는 rv의 adavpter를 가져와서 연결한다.
-        val rvAdapter = ContentRVAdapter(baseContext, items, itemKeyList)
+        val rvAdapter = ContentRVAdapter(baseContext, items, itemKeyList, bookmarkIdList)
 
         // Write a message to the database
         val database = Firebase.database
@@ -93,7 +93,7 @@ class ContentsListActivity : AppCompatActivity() {
                 for(dataModel in dataSnapshot.children) {
                     bookmarkIdList.add(dataModel.key.toString())
                 }
-
+                Log.d("ContentListActivity", bookmarkIdList.toString())
             }
 
             override fun onCancelled(databaseError: DatabaseError) {

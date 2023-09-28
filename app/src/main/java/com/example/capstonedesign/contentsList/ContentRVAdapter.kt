@@ -14,7 +14,10 @@ import com.example.capstonedesign.R
 import com.example.capstonedesign.utils.FBAuth
 import com.example.capstonedesign.utils.FBRef
 
-class ContentRVAdapter(val context: Context, val items: ArrayList<ContentModel>, val keyList : ArrayList<String>)
+class ContentRVAdapter(val context: Context,
+                       val items: ArrayList<ContentModel>,
+                       val keyList : ArrayList<String>,
+                       val bookmarkIdList: MutableList<String>)
     : RecyclerView.Adapter<ContentRVAdapter.Viewholder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ContentRVAdapter.Viewholder {
         // 만든 content_rv_item layout을 가져온다.
