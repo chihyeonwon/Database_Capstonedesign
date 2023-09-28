@@ -487,3 +487,13 @@ bookmarkArea의 ImageSource를 R.drawable.bookmark_color 검정색 북마크를 
 
 다음은 북마크를 삭제하는 작업(하얀 ui로 변경)을 수행한다.
 ```
+#### 북마크 삭제 기능 구현
+```
+ContentRVAdapter에서 bookmark를 setOnClickListener 클릭했을 때 북마크가 있을 때와 없을 때의
+로직을 처리한다.
+
+북마크가 있을 때는 removeValue로 북마크 데이터 값을 삭제하고
+북마크가 없을 때는 setValue로 BookmarkModel(true) 데이터를 넣어준다.
+
+다음은 북마크를 동적으로 삭제하는 것을 구현한다.
+```
