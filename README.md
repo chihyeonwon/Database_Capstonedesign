@@ -581,3 +581,27 @@ tiem 시간 데이터가 이상하게 나오는 문제를 뮬레이터의 시스
 ```
 입력이 모두 끝난 후에 입력 버튼을 누르면 게시글 입력 완료 메시지와 함께 게시글 글쓰기 페이지에서 나가지는 (finish()) 기능을 구현한다.
 ```
+#### 게시글 데이터 불러오기
+#### board_item_list layout
+![image](https://github.com/wonchihyeon/Database_Capstonedesign/assets/58906858/7ce2767f-90fd-4877-a6c9-663d5a196899)
+#### TalkFragment에 sample data
+![image](https://github.com/wonchihyeon/Database_Capstonedesign/assets/58906858/69b69ec9-8a76-4067-9643-a310f4c8982e)    
+```
+1. ListView 생성 2. ListView에 들어갈 item layout 생성 3. ListView와 item을 연결하는 어댑터 생성 4. ListView와 Adpater를 TalkFragment에서 연결
+
+Talk Fragment에서 boardListView 이름의 ListView 생성한다.
+
+board_item_list layout 파일을 작성한다.
+item_list 파일에는 title, content, time 세 개의 textView를 적절하게 배치한다.
+
+BoardListLVAdpater kotlin 파일을 작성한다.
+
+BoardModel 형식의 게시판리스트 데이터들을 가져와서 view와 item 들을 연결해준다.
+
+Talk Fragment에서 boardListView 리스트뷰와 BoardListLVAdapter를 연결한다.
+
+샘플 데이터 모델을 만들고 리스트 안에 넣은다음 어댑터로 넘겨주면 talk fragment에 샘플 데이터가 나오는 것을
+확인할 수 있다.
+
+다음 작업으로 샘플 데이터 대신 파이어베이스 데이터베이스에 있는 데이터모델을 리스트에 넣는 작업을 수행한다.
+```
