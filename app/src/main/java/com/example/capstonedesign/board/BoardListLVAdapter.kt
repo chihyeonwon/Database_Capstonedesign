@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
+import android.widget.TextView
 import com.example.capstonedesign.R
 
 class BoardListLVAdapter(val boardList : MutableList<BoardModel>): BaseAdapter() {
@@ -28,6 +29,9 @@ class BoardListLVAdapter(val boardList : MutableList<BoardModel>): BaseAdapter()
 
             view = LayoutInflater.from(parent?.context).inflate(R.layout.board_list_item, parent,false)
         }
+
+        val title = view?.findViewById<TextView>(R.id.titleArea)
+        title!!.text = boardList[position].title
 
         return view!!
     }
