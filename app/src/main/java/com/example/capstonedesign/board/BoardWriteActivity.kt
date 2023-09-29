@@ -4,6 +4,7 @@ import android.content.ContentValues.TAG
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import com.example.capstonedesign.R
 import com.example.capstonedesign.databinding.ActivityBoardWriteBinding
@@ -33,6 +34,10 @@ class BoardWriteActivity : AppCompatActivity() {
             FBRef.boardRef
                 .push() // 랜덤한 값
                 .setValue(BoardModel(title,content,uid,time))
+
+            Toast.makeText(this,"게시글 입력 완료", Toast.LENGTH_LONG).show()
+
+            finish()
         }
     }
 }
