@@ -13,6 +13,7 @@ import com.example.capstonedesign.R
 import com.example.capstonedesign.board.BoardListLVAdapter
 import com.example.capstonedesign.board.BoardModel
 import com.example.capstonedesign.board.BoardWriteActivity
+import com.example.capstonedesign.contentsList.BookmarkRVAdapter
 import com.example.capstonedesign.databinding.FragmentTalkBinding
 import com.example.capstonedesign.utils.FBAuth
 import com.example.capstonedesign.utils.FBRef
@@ -36,6 +37,7 @@ class TalkFragment : Fragment() {
 
     private val boardDataList = mutableListOf<BoardModel>()
 
+    private lateinit var boardRVAdapter: BoardListLVAdapter
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -51,7 +53,7 @@ class TalkFragment : Fragment() {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_talk, container, false)
 
         // BoardListLVAdpater와 연결
-        val boardRVAdapter = BoardListLVAdapter(boardDataList)
+        boardRVAdapter = BoardListLVAdapter(boardDataList)
         binding.boardListView.adapter = boardRVAdapter
 
         // TalkFragment의 writeBtn을 클릭하면 BoardWriteActivity로 이동하도록 화면 이동 기능 구현
@@ -93,6 +95,9 @@ class TalkFragment : Fragment() {
                     val item = dataModel.getValue(BoardModel::class.java)
                     boardDataList.add(item!!)
                 }
+
+                // boardRVAdapter 동기화
+                boardRVAdapter.notifyDataSetChanged()
 
                 Log.d(TAG, boardDataList.toString())
             }
