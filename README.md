@@ -559,7 +559,7 @@ writeBtn을 클릭했을 때 boardRef 밑의 push() 고유한 키 밑에 4개의
 #### 글쓰기 테스트2
 ![image](https://github.com/wonchihyeon/Database_Capstonedesign/assets/58906858/4b449f4e-6860-47a3-8e22-439d9d0a64cc)
 #### 글쓰기 테스트2 (현재 사용자 uid, 현재 시간 time 데이터 추가)
-![image](https://github.com/wonchihyeon/Database_Capstonedesign/assets/58906858/473f93a9-b4c2-412a-8879-0eb1cc5b5333)
+![image](https://github.com/wonchihyeon/Database_Capstonedesign/assets/58906858/38e4baa4-0f55-4166-a925-9defd5bf6563)
 ```
 uid는 FBAuth의 getUid 메서드에서 가져올 수 있고 이를 uid 변수에 저장한 후 Board모델에 넣는다.
 
@@ -567,4 +567,17 @@ time은 FBAuth 파일에서 getTime() 메서드를 생성하고 이를 time 변�
 
 예는 글의 제목에 test12345, 내용에 this is title2를 넣고 입력 버튼을 눌렀을 때
 실시간 테이터베이스에 title, content, uid, time 데이터가 정상적으로 들어감을 확인했다.
+
+tiem 시간 데이터가 이상하게 나오는 문제를 뮬레이터의 시스템 시간의 Region을 한국(South Korea)로 변경하여 고쳤다.
+```
+#### 글쓰기 페이지 스크롤뷰로 수정
+![image](https://github.com/wonchihyeon/Database_Capstonedesign/assets/58906858/b635f89c-e77b-48d0-a4f4-fefbb02a6dd8)
+```
+글의 제목과 내용을 입력할 때 키보드로 가려져서 불편한 문제점을 기존 LinearLayout을 ScrollView로 감싸고 LinearLayout으로 한번 더
+감싸서 스크롤 뷰로 만들어준다.
+```
+#### 토스트메시지 기능, 액티비티 사라지는 기능 구현
+![image](https://github.com/wonchihyeon/Database_Capstonedesign/assets/58906858/1a42a09e-e5db-4cf5-b9e0-d20bd608b94f)
+```
+입력이 모두 끝난 후에 입력 버튼을 누르면 게시글 입력 완료 메시지와 함께 게시글 글쓰기 페이지에서 나가지는 (finish()) 기능을 구현한다.
 ```
