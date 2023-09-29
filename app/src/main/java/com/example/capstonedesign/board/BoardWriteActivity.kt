@@ -27,9 +27,12 @@ class BoardWriteActivity : AppCompatActivity() {
             // uid를 가져온다.
             val uid = FBAuth.getUid()
 
+            // time을 가져온다.
+            val time = FBAuth.getTime()
+
             FBRef.boardRef
                 .push() // 랜덤한 값
-                .setValue(BoardModel(title,content,uid,"time"))
+                .setValue(BoardModel(title,content,uid,time))
         }
     }
 }
