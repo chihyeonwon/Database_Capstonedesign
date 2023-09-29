@@ -556,3 +556,15 @@ writeBtn을 클릭했을 때 boardRef 밑의 push() 고유한 키 밑에 4개의
 예는 글쓰기 페이지에서 title123(title), this is title(content), uid,time(default)를 입력하고 입력버튼을 클릭했을 때의
 생성된 데이터의 모습이다.
 ```
+#### 글쓰기 테스트2
+![image](https://github.com/wonchihyeon/Database_Capstonedesign/assets/58906858/4b449f4e-6860-47a3-8e22-439d9d0a64cc)
+#### 글쓰기 테스트2 (현재 사용자 uid, 현재 시간 time 데이터 추가)
+![image](https://github.com/wonchihyeon/Database_Capstonedesign/assets/58906858/473f93a9-b4c2-412a-8879-0eb1cc5b5333)
+```
+uid는 FBAuth의 getUid 메서드에서 가져올 수 있고 이를 uid 변수에 저장한 후 Board모델에 넣는다.
+
+time은 FBAuth 파일에서 getTime() 메서드를 생성하고 이를 time 변수에 저장한 후 Board모델에 넣는다.
+
+예는 글의 제목에 test12345, 내용에 this is title2를 넣고 입력 버튼을 눌렀을 때
+실시간 테이터베이스에 title, content, uid, time 데이터가 정상적으로 들어감을 확인했다.
+```
