@@ -7,6 +7,7 @@ import android.util.Log
 import androidx.databinding.DataBindingUtil
 import com.example.capstonedesign.R
 import com.example.capstonedesign.databinding.ActivityBoardWriteBinding
+import com.example.capstonedesign.utils.FBRef
 
 class BoardWriteActivity : AppCompatActivity() {
 
@@ -21,6 +22,10 @@ class BoardWriteActivity : AppCompatActivity() {
 
             val title = binding.titleArea.text.toString()
             val content = binding.contentArea.text.toString()
+
+            FBRef.boardRef
+                .push() // 랜덤한 값
+                .setValue(BoardModel(title,content,"uid","time"))
         }
     }
 }
