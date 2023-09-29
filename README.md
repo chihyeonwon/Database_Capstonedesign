@@ -533,3 +533,26 @@ BookmarkFragment Activity에서 RecyclerView를 생성하고 BookmarkFragment에
 북마크한 데이터만 가져오도록 수정하기 위해서 북마크id 리스트가 키값을 포함하고 있다면
 그 item과 keyList를 받도록 로직을 수정한다. 
 ```
+## 23.09.29 개발일지
+#### 게시글 업로드 기능 구현
+#### boardRef 게시판 데이터베이스 아키텍처 설계
+![image](https://github.com/wonchihyeon/Database_Capstonedesign/assets/58906858/3581b00f-8e39-482d-99bf-fbdc37eaca7c)    
+#### 글쓰기 테스트
+![image](https://github.com/wonchihyeon/Database_Capstonedesign/assets/58906858/9e37b65f-0a8f-4f31-aaa2-16696bb138ac)     
+#### 글쓰기 데이터를 데이터베이스에 저장
+![image](https://github.com/wonchihyeon/Database_Capstonedesign/assets/58906858/62a6ac5a-cc7e-4130-b15d-b4f9025fafd5)    
+```
+다시 BoardWriteActivity로 와서 writeBtn 글쓰기 버튼을 클릭했을 때
+데이터베이스 board 밑에 고유한 key값 밑에 boardModel 데이터를 넣어주는 데이터베이스 형식을 가진다.
+
+boardModel 게시판 모델은 title(글의제목), content(글의내용), uid(글쓴이 id), time(글을 쓴 시간) 데이터를 포함한다.
+
+그러기 위해선 BoardModel kotlin data class file을 작성한다.
+BoardModel은 title,content,uid,time 변수를 String 문자열로 넣어준다.
+
+FBRef.boardRef.push().setValue(title, content, "uid", "time) 을 사용하여 BoardWrite Activity에서 글의 제목과 내용을 입력하고
+writeBtn을 클릭했을 때 boardRef 밑의 push() 고유한 키 밑에 4개의 데이터가 파이어베이스 실시간 데이터베이스에 들어가는 것을 알 수 있다.
+
+예는 글쓰기 페이지에서 title123(title), this is title(content), uid,time(default)를 입력하고 입력버튼을 클릭했을 때의
+생성된 데이터의 모습이다.
+```
