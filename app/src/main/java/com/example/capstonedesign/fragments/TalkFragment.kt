@@ -88,6 +88,8 @@ class TalkFragment : Fragment() {
         val postListner = object: ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
 
+                boardDataList.clear()
+
                 // dataModel에 있는 데이터를 하나씩 가져오는 부분
                 for(dataModel in dataSnapshot.children) {
                     Log.d(TAG, dataModel.toString())
