@@ -605,3 +605,33 @@ Talk Fragment에서 boardListView 리스트뷰와 BoardListLVAdapter를 연결�
 
 다음 작업으로 샘플 데이터 대신 파이어베이스 데이터베이스에 있는 데이터모델을 리스트에 넣는 작업을 수행한다.
 ```
+#### Firebase의 게시글 데이터를 불러오기
+#### talkFragment Log.d
+![image](https://github.com/wonchihyeon/Database_Capstonedesign/assets/58906858/591c473c-278c-458b-92bc-f2f8ebbbe1dd)     
+#### 게시글 입력 기능 구현
+![image](https://github.com/wonchihyeon/Database_Capstonedesign/assets/58906858/1075ba5a-b6c0-4f47-9172-4700b38b5efa)
+![image](https://github.com/wonchihyeon/Database_Capstonedesign/assets/58906858/84dfbdad-448a-41c7-89aa-19deeb2f9319)
+```
+Firebase의 게시글 데이터를 불러오는 부분을 getFBBoardData 함수를 생성하여 구현한다.
+bookmark 데이터를 가져올 때 사용한 postListener 부분을 복사한 다음 일부 수정하여 사용한다.
+
+getFBBoardData 함수로 리턴되는 값의 로그를 찍어봤을 때 키와 value 값(BoardModel(title, content, uid, time) 값이 정상적으로
+불러와지는 것을 확인할 수 있다.
+
+불러와진 BoardModel 데이터들을 저장할 boardDataList 리스트를 생성하고 리스트에 받아온 데이터모델을 하나씩 넣어준다.
+
+샘플리스트 대신 방금 생성한 boardDataList를 어댑터에 넣어준다.
+
+데이터가 다 받아온 다음 어댑터를 동기화하는 부분을 추가해준다.
+하는 방법은 BoardRVAdapter를 private lateinit val 전역 변수로 선언해준 다음
+getFBBoardData 함수의 onDataChange 함수에서 boardRVAdapter.notifyDataSetChanged()를 사용하여 어댑터를 동기화해준다.
+
+board_list_item의 title, content, time 각각에 적절한 id값을 부여하고
+BoardListLVAdpater의 getView 함수에서 title TextView의 텍스트 값을 boardList 데이터모델의 title 값으로 저장한다.
+
+content와 time 역시도 데이터모델의 content, time 값으로 저장한다.
+
+talk fragment에서 게시글데이터를 받아올 때 리스트를 한번 초기화해주고 받아오는 코드를 추가한다. (boardDataList.clear())
+
+게시글을 입력한 후에 입력 버튼을 누르면 talk fragment에 입력한 게시글의 title, content, time 값이 정상적으로 출력됨을 확인할 수 있다.
+```
