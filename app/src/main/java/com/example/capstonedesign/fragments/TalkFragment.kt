@@ -50,11 +50,8 @@ class TalkFragment : Fragment() {
         // Inflate the layout for this fragment
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_talk, container, false)
 
-        val boardList = mutableListOf<BoardModel>()
-        boardList.add(BoardModel("a","b","c","d"))
-
         // BoardListLVAdpater와 연결
-        val boardRVAdapter = BoardListLVAdapter(boardList)
+        val boardRVAdapter = BoardListLVAdapter(boardDataList)
         binding.boardListView.adapter = boardRVAdapter
 
         // TalkFragment의 writeBtn을 클릭하면 BoardWriteActivity로 이동하도록 화면 이동 기능 구현
