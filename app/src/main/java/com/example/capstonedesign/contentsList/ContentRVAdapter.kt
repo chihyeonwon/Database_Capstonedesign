@@ -55,8 +55,6 @@ class ContentRVAdapter(val context: Context,
             }
 
             bookmarkArea.setOnClickListener {
-                Toast.makeText(context, key, Toast.LENGTH_LONG).show()
-
                 if(bookmarkIdList.contains(key)){
                     // 북마크가 있을 때 삭제
                     FBRef.bookmarkRef
