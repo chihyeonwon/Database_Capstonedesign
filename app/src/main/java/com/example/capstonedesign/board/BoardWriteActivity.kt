@@ -21,6 +21,8 @@ import java.io.ByteArrayOutputStream
 class BoardWriteActivity : AppCompatActivity() {
 
     private lateinit var binding : ActivityBoardWriteBinding
+
+    private var isImageUpload = false
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
@@ -48,7 +50,9 @@ class BoardWriteActivity : AppCompatActivity() {
             Toast.makeText(this,"게시글 입력 완료", Toast.LENGTH_LONG).show()
 
             // 이미지를 Firebase 스토리지에 업로드
-            imageUpload(key)
+            if(isImageUpload == true) {
+                imageUpload(key)
+            }
 
             finish()
         }
@@ -56,6 +60,7 @@ class BoardWriteActivity : AppCompatActivity() {
         binding.imageArea.setOnClickListener {
             val gallery = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.INTERNAL_CONTENT_URI)
             startActivityForResult(gallery, 100)
+            isImageUpload = true
         }
     }
 
