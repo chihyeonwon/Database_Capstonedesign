@@ -6,6 +6,7 @@
     android:orientation="vertical">
 
     <Button
+        android:id="@+id/editBtn"
         android:text="수정 버튼"
         android:textSize="20sp"
         android:textStyle="bold"
@@ -16,6 +17,7 @@
         android:layout_height="wrap_content"/>
 
     <Button
+        android:id="@+id/removeBtn"
         android:text="삭제 버튼"
         android:textSize="20sp"
         android:textStyle="bold"
