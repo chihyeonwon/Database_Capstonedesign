@@ -735,3 +735,19 @@ key를 먼저 생성 -> 생성한 랜덤한 key값 밑에 데이터를 넣어준
 
 다음으로 Storage의 이미지를 불러오는 부분을 작업한다.
 ```
+#### 게시글 보기 페이지 수정
+```
+게시글 보기 페이지에 업로드한 이미지를 불러와서 보여주는 ImageView를 생성한다.
+```
+#### 게시글 이미지 다운로드
+![image](https://github.com/wonchihyeon/Database_Capstonedesign/assets/58906858/92081ccb-3dfd-416b-aac1-29ce51a9a7bc)
+![image](https://github.com/wonchihyeon/Database_Capstonedesign/assets/58906858/766507d9-aa8b-4fa2-9bf0-2e11ef011b76)
+```
+이미지를 다운로드하는 방법을 여러 가지가 있는데 그 중 FirebaseUI 방법을 사용한다.
+
+gradle 파일에 ui-storage sdk를 넣어주고 getImageData() 함수를 생성한다.
+downloadUrl.addOnCompleteListener를 사용하여 task가 성공적일 때 이미지뷰를 glide into로 넣어준다.
+
+이미지를 업로드하는 버튼을 눌러서 업로드를 한다면 이미지를 업로드하도록 하고
+버튼을 누르지 않았다면 = 이미지 업로드 x 이미지 업로드 없이 게시물을 올리게끔 로직을 수정한다.
+```
