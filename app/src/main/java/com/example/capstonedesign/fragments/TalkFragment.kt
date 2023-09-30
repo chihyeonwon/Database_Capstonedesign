@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.findNavController
 import com.example.capstonedesign.R
+import com.example.capstonedesign.board.BoardInsideActivity
 import com.example.capstonedesign.board.BoardListLVAdapter
 import com.example.capstonedesign.board.BoardModel
 import com.example.capstonedesign.board.BoardWriteActivity
@@ -55,6 +56,14 @@ class TalkFragment : Fragment() {
         // BoardListLVAdpater와 연결
         boardRVAdapter = BoardListLVAdapter(boardDataList)
         binding.boardListView.adapter = boardRVAdapter
+
+        binding.boardListView.setOnItemClickListener { parent, view, position, id ->
+            val intent = Intent(context,BoardInsideActivity::class.java)
+            intent.putExtra("title",boardDataList[position].title)
+            intent.putExtra("content",boardDataList[position].content)
+            intent.putExtra("time",boardDataList[position].time)
+            startActivity(intent)
+        }
 
         // TalkFragment의 writeBtn을 클릭하면 BoardWriteActivity로 이동하도록 화면 이동 기능 구현
         binding.writeBtn.setOnClickListener{
