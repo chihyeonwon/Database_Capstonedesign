@@ -37,6 +37,7 @@ class TalkFragment : Fragment() {
     private val TAG = TalkFragment::class.java.simpleName
 
     private val boardDataList = mutableListOf<BoardModel>()
+    private val boardKeyList = mutableListOf<String>()
 
     private lateinit var boardRVAdapter: BoardListLVAdapter
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -58,10 +59,14 @@ class TalkFragment : Fragment() {
         binding.boardListView.adapter = boardRVAdapter
 
         binding.boardListView.setOnItemClickListener { parent, view, position, id ->
-            val intent = Intent(context,BoardInsideActivity::class.java)
+            /*val intent = Intent(context,BoardInsideActivity::class.java)
             intent.putExtra("title",boardDataList[position].title)
             intent.putExtra("content",boardDataList[position].content)
             intent.putExtra("time",boardDataList[position].time)
+            startActivity(intent)*/
+
+            val intent = Intent(context,BoardInsideActivity::class.java)
+            intent.putExtra("key",boardKeyList[position])
             startActivity(intent)
         }
 
@@ -105,7 +110,10 @@ class TalkFragment : Fragment() {
 
                     val item = dataModel.getValue(BoardModel::class.java)
                     boardDataList.add(item!!)
+                    boardKeyList.add(dataModel.key.toString())
                 }
+
+                boardKeyList.reverse()
                 // 최신 게시글이 앞으로 오도록 리스트를 뒤집는다.
                 boardDataList.reverse()
 
