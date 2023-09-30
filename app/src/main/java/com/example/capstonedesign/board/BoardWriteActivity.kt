@@ -48,7 +48,7 @@ class BoardWriteActivity : AppCompatActivity() {
             Toast.makeText(this,"게시글 입력 완료", Toast.LENGTH_LONG).show()
 
             // 이미지를 Firebase 스토리지에 업로드
-            imageUpload()
+            imageUpload(key)
 
             finish()
         }
@@ -59,11 +59,11 @@ class BoardWriteActivity : AppCompatActivity() {
         }
     }
 
-    private fun imageUpload() {
+    private fun imageUpload(key: String) {
 
         val storage = Firebase.storage
         val storageRef = storage.reference
-        val mountainsRef = storageRef.child("mountains.jpg")
+        val mountainsRef = storageRef.child(key + ".png")
 
         val imageView = binding.imageArea
         imageView.isDrawingCacheEnabled = true
