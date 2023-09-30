@@ -106,6 +106,8 @@ class TalkFragment : Fragment() {
                     val item = dataModel.getValue(BoardModel::class.java)
                     boardDataList.add(item!!)
                 }
+                // 최신 게시글이 앞으로 오도록 리스트를 뒤집는다.
+                boardDataList.reverse()
 
                 // boardRVAdapter 동기화
                 boardRVAdapter.notifyDataSetChanged()
