@@ -751,3 +751,22 @@ downloadUrl.addOnCompleteListener를 사용하여 task가 성공적일 때 이�
 이미지를 업로드하는 버튼을 눌러서 업로드를 한다면 이미지를 업로드하도록 하고
 버튼을 누르지 않았다면 = 이미지 업로드 x 이미지 업로드 없이 게시물을 올리게끔 로직을 수정한다.
 ```
+#### 게시글 수정, 삭제 UI 버튼 레이아웃
+![image](https://github.com/wonchihyeon/Database_Capstonedesign/assets/58906858/10f51563-4d30-47ec-be51-7f545782e2b4)     
+#### custom_dialog layout
+![image](https://github.com/wonchihyeon/Database_Capstonedesign/assets/58906858/7256ae1f-bc39-461a-baf2-bb86a35c1c3e)
+#### AlertDialog 다이얼로그 기능 구현(custom_dialog를 띄우기)
+![image](https://github.com/wonchihyeon/Database_Capstonedesign/assets/58906858/8f17710e-f45d-4036-bbe0-6ca8ba56f393)
+```
+게시물 보기 레이아웃의 최상단 오른쪽에 boardSettingIcon을 넣어준다.
+boardSettingIcon을 클릭하면 custom_dialog layout이 나오도록 이벤트 처리한다.
+
+custom_dialog layout파일을 작성한다. 수정과 삭제 버튼을 배치한다.
+
+만든 custom_dialog를 띄우는 showDialog() 함수 생성한다.
+함수를 clickListener 이벤트처리 쪽에 넣어주고 실행하면 클릭했을 때 custom_dialog가 정상적으로 나오는 것을 확인한다.
+
+수정, 삭제 버튼 각각에 id를 부여하고 alertdialog의 수정버튼을 id로 찾아서 onClickListener 이벤트 처리를 넣어준다.(삭제버튼도 마찬가지)
+
+다음으로 삭제 버튼을 눌렀을 때 게시글을 삭제하는 기능을 구현한다.
+```
