@@ -676,3 +676,33 @@ talk fragment에서 게시글을 받아오는 부분에(getFBBoardData()) 동기
 
 게시글을 입력하고 입력버튼을 누르면 입력한 게시글이 최상단에 위치하는 것을 알 수 있다.
 ```
+#### 이미지 업로드 기능 구현
+#### 외부 이미지 접근 권한 설정
+![image](https://github.com/wonchihyeon/Database_Capstonedesign/assets/58906858/6b0dbe14-623c-4dfd-b601-a9d702f6fc27)
+#### 내부 저장소 갤러리로 화면이동하는 코드
+![image](https://github.com/wonchihyeon/Database_Capstonedesign/assets/58906858/39c6a12f-5e4f-4132-aa3e-9c6e501baa50)    
+#### 적절한 이미지 소스 다운로드
+![image](https://github.com/wonchihyeon/Database_Capstonedesign/assets/58906858/a5909594-d945-4f81-b198-aa3882fc6072)
+#### 내부 이미지 저장소에 접근
+![image](https://github.com/wonchihyeon/Database_Capstonedesign/assets/58906858/5b055b71-30ed-4fe0-bfed-1063d41e3c9a)
+#### 선택한 이미지를 업로드
+![image](https://github.com/wonchihyeon/Database_Capstonedesign/assets/58906858/2e632342-39e2-4f4c-9728-b7269d6e0444)
+```
+이미지 업로드 권한을 AndroidManifest.xml파일에서 외부 저장소 접근 권한을 설정해준다.
+(permission.READ_EXTERNAL_STORAGE)
+
+이미지 업로드 ImageView에 imageArea id를 부여한다.
+이미지 업로드를 클릭했을 때의 이벤트를 구현해준다.
+
+onActivityResult라고 해서 resultCode가 OK이고 100이면 정상적으로 내부 이미지 저장소로 화면이동이 되도록 설정한다.
+
+웹에서 강아지 이미지를 다운로드 한 후에 이미지 추가 ImageView를 클릭하면 내부 저장소로 이동하고 내부 저장소에 다운로드한
+이미지가 있는 것을 확인할 수 있다.
+
+onActivityResult에서 resultCode가 OK, 100일 경우 binding.imageArea.setImageURI(data?.data) 이미지 데이터를 보여주도록
+설정한다.
+
+이미지를 선택하면 글쓰기 페이지에 정상적으로 들어가는 것을 확인했다.
+
+다음 작업은 선택한 게시글의 이미지를 파이어베이스에 저장하는 작업을 수행한다. 
+```
