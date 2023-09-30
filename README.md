@@ -706,3 +706,32 @@ onActivityResult에서 resultCode가 OK, 100일 경우 binding.imageArea.setImag
 
 다음 작업은 선택한 게시글의 이미지를 파이어베이스에 저장하는 작업을 수행한다. 
 ```
+#### Firebase Storage 스토리지 사용
+[Android Firebase Storage 개발문서](https://firebase.google.com/docs/storage/android/start?hl=ko)    
+![image](https://github.com/wonchihyeon/Database_Capstonedesign/assets/58906858/fc419aeb-98b9-48fb-a0c9-277b92c063d9)    
+#### Firebase Storage로 이미지 업로드
+![image](https://github.com/wonchihyeon/Database_Capstonedesign/assets/58906858/7da1e6a8-6b89-4fc9-aedf-d958985aed26)
+![image](https://github.com/wonchihyeon/Database_Capstonedesign/assets/58906858/4bae6437-9738-482a-8cf7-c5625cd458c4)
+```
+이미지 서버를 데이터베이스 서버와 따로 사용을 한다.
+파이어베이스 스토리지를 시작하고 파이어베이스 스토리지 개발문서를 참조한다.
+
+build.gradle에 필요한 kotlin sdk를 넣어준다.
+
+storage 변수를 만들고 Firebase.storage를 선언한다.
+
+메모리 이미지를 업로드하는 개발문서 부분을 참조하여 ImageArea를 imageView로 넣어주고 mountains.jpg라는 이름의 reference로
+이미지를 업로드하도록 코드를 넣는다.
+
+선택한 이미지가 storage에 올라간 것을 확인했다.
+
+키값을 먼저 생성하고 게시글데이터를 생성하도록 코드를 수정한다.
+key를 먼저 생성 -> 생성한 랜덤한 key값 밑에 데이터를 넣어준다.
+
+그 key값을 이미지의 이름으로 넣어준다. mountains.jpg -> key+".png"
+키값으로 이미지의 고유한 이름으로 설정하여 다른 이미지들과 구분하는 역할을 한다.
+
+이렇게 이미지의 이름을 생성된 게시글의 키 값으로 해주면 다른 부분에서 활용 가능하다.(이미지에 대한 정보를 알기 때문에) 구분
+
+다음으로 Storage의 이미지를 불러오는 부분을 작업한다.
+```
