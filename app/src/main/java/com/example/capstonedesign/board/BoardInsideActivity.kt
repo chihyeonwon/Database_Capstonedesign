@@ -4,13 +4,17 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import androidx.databinding.DataBindingUtil
+import com.bumptech.glide.Glide
 import com.example.capstonedesign.R
 import com.example.capstonedesign.databinding.ActivityBoardInsideBinding
 import com.example.capstonedesign.utils.FBAuth
 import com.example.capstonedesign.utils.FBRef
+import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.ValueEventListener
+import com.google.firebase.ktx.Firebase
+import com.google.firebase.storage.ktx.storage
 
 class BoardInsideActivity : AppCompatActivity() {
 
@@ -34,6 +38,23 @@ class BoardInsideActivity : AppCompatActivity() {
 
         val key = intent.getStringExtra("key")
         getBoardData(key.toString())
+        getImageData(key.toString())
+    }
+
+    private fun getImageData(key: String) {
+        val storageReference = Firebase.storage.reference.child(key + ".png")
+
+        val imageViewFromFB = binding.getImageArea
+
+        storageReference.downloadUrl.addOnCompleteListener(OnCompleteListener { task->
+            if(task.isSuccessful) {
+                Glide.with(this)
+                    .load(task.result)
+                    .into(imageViewFromFB)
+            }else {
+
+            }
+        })
     }
 
     private fun getBoardData(key: String) {
