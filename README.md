@@ -665,3 +665,14 @@ talk fragment에서 게시글데이터를 받아올 때 리스트를 한번 초�
 
 게시글을 클릭하면 각각에 해당되는 값들이 잘 나오는 것을 확인할 수 있다.
 ```
+#### 최근 게시물을 맨 앞으로 올라오게 하는 기능 구현
+![image](https://github.com/wonchihyeon/Database_Capstonedesign/assets/58906858/42bd8434-3051-4edc-9749-f94f4f46b2d7)
+![image](https://github.com/wonchihyeon/Database_Capstonedesign/assets/58906858/3d95248c-b563-4f17-a8e0-118747cd2f44)
+```
+보통의 게시판에서 최신 글이 맨 위로 올라오는 데 이는 리스트를 뒤집어 주기만 하면 기능을 간단하게 구현할 수 있다.
+
+talk fragment에서 게시글을 받아오는 부분에(getFBBoardData()) 동기화하는 부분(notifyDataSetChanged()) 앞에
+데이터리스트를 뒤집는 코드를 추가한다.boardDataList.reverse()
+
+게시글을 입력하고 입력버튼을 누르면 입력한 게시글이 최상단에 위치하는 것을 알 수 있다.
+```
