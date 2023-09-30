@@ -1,8 +1,10 @@
 package com.example.capstonedesign.board
 
+import android.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.LayoutInflater
 import androidx.databinding.DataBindingUtil
 import com.bumptech.glide.Glide
 import com.example.capstonedesign.R
@@ -28,11 +30,25 @@ class BoardInsideActivity : AppCompatActivity() {
 
         binding = DataBindingUtil.setContentView(this, R.layout.activity_board_inside)
 
+        // boardSettingIcon을 클릭하면 custom_dialog layout이 나오도록 이벤트 처리
+        binding.boardSettingIcon.setOnClickListener {
+            showDialog()
+        }
+
         val key = intent.getStringExtra("key")
         getBoardData(key.toString())
         getImageData(key.toString())
     }
 
+    // 만든 custom_dialog를 띄우는 showDialog() 함수 생성
+    private fun showDialog() {
+        val mDialogView = LayoutInflater.from(this).inflate(R.layout.custom_dialog, null)
+        val mBuilder = AlertDialog.Builder(this)
+            .setView(mDialogView)
+            .setTitle("게시글 수정/삭제")
+
+        mBuilder.show()
+    }
     private fun getImageData(key: String) {
         val storageReference = Firebase.storage.reference.child(key + ".png")
 
