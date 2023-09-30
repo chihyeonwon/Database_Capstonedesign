@@ -659,3 +659,9 @@ talk fragment에서 게시글데이터를 받아올 때 리스트를 한번 초�
 게시글 보기 페이지는 title, time, content TextView를 이용하여 LinearLayout(vertical)로 배치하였다.
 바인딩할 수 있도록 layout으로 감싸주고, 각각의 TextView에 적절한 id를 부여한다.
 ```
+![image](https://github.com/wonchihyeon/Database_Capstonedesign/assets/58906858/2959ad92-0c7c-4077-b874-e765e9fe5e83)
+```
+바인딩을 생성하고 title, content, time 각각의 text를 화면전달할 때 넘어온 선택한 title, content, time 데이터를 넣어준다.
+
+게시글을 클릭하면 각각에 해당되는 값들이 잘 나오는 것을 확인할 수 있다.
+```
