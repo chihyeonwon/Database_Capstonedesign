@@ -22,8 +22,8 @@ class BoardInsideActivity : AppCompatActivity() {
         val content = intent.getStringExtra("content").toString()
         val time = intent.getStringExtra("time").toString()
 
-        Log.d(TAG, title)
-        Log.d(TAG, content)
-        Log.d(TAG, time)
+        binding.titleArea.text = title
+        binding.textArea.text = content
+        binding.timeArea.text = time
     }
 }
