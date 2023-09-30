@@ -650,3 +650,12 @@ talk fragment에서 게시글데이터를 받아올 때 리스트를 한번 초�
 
 다음으로 넘어온 데이터를 가공하여 Layout에 보여주기만 하면 된다.
 ```
+
+#### 게시글 보기 페이지 Layout 
+![image](https://github.com/wonchihyeon/Database_Capstonedesign/assets/58906858/18545c9f-55ce-4b53-b308-cdc6bedf6003)
+```
+게시글 보기 페이지를 꾸며준다.
+
+게시글 보기 페이지는 title, time, content TextView를 이용하여 LinearLayout(vertical)로 배치하였다.
+바인딩할 수 있도록 layout으로 감싸주고, 각각의 TextView에 적절한 id를 부여한다.
+```
