@@ -635,3 +635,18 @@ talk fragment에서 게시글데이터를 받아올 때 리스트를 한번 초�
 
 게시글을 입력한 후에 입력 버튼을 누르면 talk fragment에 입력한 게시글의 title, content, time 값이 정상적으로 출력됨을 확인할 수 있다.
 ```
+## 23.09.30 개발일지
+![image](https://github.com/wonchihyeon/Database_Capstonedesign/assets/58906858/652e4861-7075-43b6-afc6-372c5100701d)
+```
+게시글을 선택했을 때 게시글을 들어가서 보는 게시글 보기페이지를 만든다.
+
+게시글 보기 액티비티(BoardInsideActivity)를 생성한다.
+만들기에 앞서서 Talk Fragment에서 각각의 게시글을 클릭했을 때(setOnItemClickListener) 게시글 보기 액티비티(BoardInsideAcitivty)로
+화면 이동(intent)하면서 선택한 아이템의 title(boardDataList[position.title]), content, time 데이터를 화면전환할 때 넘겨준다(putExtra)
+
+게시글 보기 액티비티에서 넘어온 데이터를 받아온다.(getStringExtra)
+
+로그를 찍어서 게시글 보기 액티비티로 클릭한 게시글의 title, content, time 데이터가 잘 찍히는 것을 알 수 있다.
+
+다음으로 넘어온 데이터를 가공하여 Layout에 보여주기만 하면 된다.
+```
