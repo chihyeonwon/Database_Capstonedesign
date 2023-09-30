@@ -38,8 +38,11 @@ class BoardWriteActivity : AppCompatActivity() {
             // time을 가져온다.
             val time = FBAuth.getTime()
 
+            // 키부터 생성하고 데이터베이스에 저장하도록 수정
+            val key = FBRef.boardRef.push().key.toString()
+
             FBRef.boardRef
-                .push() // 랜덤한 값
+                .child(key) // 랜덤한 값
                 .setValue(BoardModel(title,content,uid,time))
 
             Toast.makeText(this,"게시글 입력 완료", Toast.LENGTH_LONG).show()
