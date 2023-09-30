@@ -28,14 +28,6 @@ class BoardInsideActivity : AppCompatActivity() {
 
         binding = DataBindingUtil.setContentView(this, R.layout.activity_board_inside)
 
-        /*val title = intent.getStringExtra("title").toString()
-        val content = intent.getStringExtra("content").toString()
-        val time = intent.getStringExtra("time").toString()
-
-        binding.titleArea.text = title
-        binding.textArea.text = content
-        binding.timeArea.text = time*/
-
         val key = intent.getStringExtra("key")
         getBoardData(key.toString())
         getImageData(key.toString())
