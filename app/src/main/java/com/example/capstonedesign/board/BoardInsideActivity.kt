@@ -55,7 +55,10 @@ class BoardInsideActivity : AppCompatActivity() {
         val alertDialog = mBuilder.show()
         // 수정버튼을 클릭했을 때
         alertDialog.findViewById<Button>(R.id.editBtn)?.setOnClickListener {
+            Toast.makeText(this,"수정 버튼을 눌렀습니다.",Toast.LENGTH_LONG).show()
 
+            val intent = Intent(this, BoardEditActivity::class.java)
+            startActivity(intent)
         }
         // 삭제버튼을 클릭햇을 때
         alertDialog.findViewById<Button>(R.id.removeBtn)?.setOnClickListener {
