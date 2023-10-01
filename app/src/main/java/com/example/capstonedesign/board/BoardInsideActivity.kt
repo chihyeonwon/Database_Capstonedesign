@@ -58,6 +58,7 @@ class BoardInsideActivity : AppCompatActivity() {
             Toast.makeText(this,"수정 버튼을 눌렀습니다.",Toast.LENGTH_LONG).show()
 
             val intent = Intent(this, BoardEditActivity::class.java)
+            intent.putExtra("key", key)
             startActivity(intent)
         }
         // 삭제버튼을 클릭햇을 때
