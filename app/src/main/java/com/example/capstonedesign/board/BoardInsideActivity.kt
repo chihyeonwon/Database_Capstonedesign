@@ -1,10 +1,13 @@
 package com.example.capstonedesign.board
 
 import android.app.AlertDialog
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
+import android.widget.Button
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import com.bumptech.glide.Glide
 import com.example.capstonedesign.R
@@ -24,6 +27,8 @@ class BoardInsideActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityBoardInsideBinding
 
+    private lateinit var key:String
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_board_inside)
@@ -35,9 +40,9 @@ class BoardInsideActivity : AppCompatActivity() {
             showDialog()
         }
 
-        val key = intent.getStringExtra("key")
-        getBoardData(key.toString())
-        getImageData(key.toString())
+        key = intent.getStringExtra("key").toString()
+        getBoardData(key)
+        getImageData(key)
     }
 
     // 만든 custom_dialog를 띄우는 showDialog() 함수 생성
@@ -47,7 +52,17 @@ class BoardInsideActivity : AppCompatActivity() {
             .setView(mDialogView)
             .setTitle("게시글 수정/삭제")
 
-        mBuilder.show()
+        val alertDialog = mBuilder.show()
+        // 수정버튼을 클릭했을 때
+        alertDialog.findViewById<Button>(R.id.editBtn)?.setOnClickListener {
+
+        }
+        // 삭제버튼을 클릭햇을 때
+        alertDialog.findViewById<Button>(R.id.removeBtn)?.setOnClickListener {
+            FBRef.boardRef.child(key).removeValue()
+            Toast.makeText(this,"삭제완료",Toast.LENGTH_LONG).show()
+            finish()
+        }
     }
     private fun getImageData(key: String) {
         val storageReference = Firebase.storage.reference.child(key + ".png")
@@ -69,11 +84,16 @@ class BoardInsideActivity : AppCompatActivity() {
         val postListner = object: ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
 
-                val dataModel = dataSnapshot.getValue(BoardModel::class.java)
+                try {
+                    val dataModel = dataSnapshot.getValue(BoardModel::class.java)
 
-                binding.titleArea.text = dataModel!!.title
-                binding.textArea.text = dataModel!!.content
-                binding.timeArea.text = dataModel!!.time
+                    binding.titleArea.text = dataModel!!.title
+                    binding.textArea.text = dataModel!!.content
+                    binding.timeArea.text = dataModel!!.time
+
+                } catch(e: Exception) {
+                    Log.d(TAG,"삭제완료")
+                }
             }
 
             override fun onCancelled(databaseError: DatabaseError) {
