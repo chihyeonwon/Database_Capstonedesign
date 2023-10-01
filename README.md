@@ -770,3 +770,14 @@ custom_dialog layout파일을 작성한다. 수정과 삭제 버튼을 배치한
 
 다음으로 삭제 버튼을 눌렀을 때 게시글을 삭제하는 기능을 구현한다.
 ```
+## 23.10.01 개발일지
+
+#### 게시글 삭제 기능 구현
+![image](https://github.com/wonchihyeon/Database_Capstonedesign/assets/58906858/e1dce880-b401-4d03-9308-628497a4bfcb)
+```
+게시판 글의 키값을 lateinit var 전역변수로 뺀 다음 boardRef 레퍼런스의 키값을 removeValue()한다.
+
+getBoardData에서 계속 앱이 죽는 문제가 발생하여 예외가 발생했을 때 처리하는 try catch문을 사용하였다.
+
+앱을 실행하고 삭제버튼을 클릭하면 게시글이 정상적으로 삭제됨을 확인했다.
+```
