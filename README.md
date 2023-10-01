@@ -781,3 +781,20 @@ getBoardData에서 계속 앱이 죽는 문제가 발생하여 예외가 발생�
 
 앱을 실행하고 삭제버튼을 클릭하면 게시글이 정상적으로 삭제됨을 확인했다.
 ```
+#### 게시글 수정 페이지 Layout 
+![image](https://github.com/wonchihyeon/Database_Capstonedesign/assets/58906858/73329a84-438e-41bf-b201-2ba329cd146b)
+```
+게시글 수정을 위한 BoardEdit Acitivity를 생성하고 layout은 BoardWrite Activity의 Layout을 복사해서 일부 수정하여 사용한다.
+
+수정 버튼을 눌렀을 때 BoardEdit 화면이동 기능을 구현한다.
+```
+
+#### 게시글 수정 페이지 구현 -1
+![image](https://github.com/wonchihyeon/Database_Capstonedesign/assets/58906858/6f62c9bc-879a-4e33-be7f-b2b2b7f39c3f)
+```
+다이얼로그에서 수정 페이지로 화면이동이 될 때 putExtra로 키값이 전달되도록 한다.
+수정페이지에서 이 키 값을 받은 다음 게시글 보기 페이지(boardInside)에서 getBoardData 함수를 가져와서 사용한다.
+함수안의 textView를 가져올 때와 editText를 가져올 때 사용하는 메서드가 다름에 유의한다(TextView : text , editText : .setText())
+
+수정 페이지에 게시글보기의 데이터(title, content)들이 정상적으로 들어가는 것을 알 수 있다.
+```
