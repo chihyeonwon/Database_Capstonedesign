@@ -812,7 +812,7 @@ getBoardData에서 계속 앱이 죽는 문제가 발생하여 예외가 발생�
 ```
 #### 게시글 수정 기능 구현 完
 ![image](https://github.com/wonchihyeon/Database_Capstonedesign/assets/58906858/2f21b3fd-8116-4faf-b719-b3976efaa063)
-
+![image](https://github.com/wonchihyeon/Database_Capstonedesign/assets/58906858/69aa4fb9-ec22-40ca-9d0b-e79f6f8d6869)
 ```
 수정한 데이터를 파이어베이스에 집어넣는다.
 edit 버튼을 누르면 boardRef 경로의 데이터베이스에 변경한 텍스트들을 넣어주는 editBoardData 메서드를 만들고
