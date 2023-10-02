@@ -8,6 +8,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.widget.Button
 import android.widget.Toast
+import androidx.core.view.isVisible
 import androidx.databinding.DataBindingUtil
 import com.bumptech.glide.Glide
 import com.example.capstonedesign.R
@@ -92,6 +93,14 @@ class BoardInsideActivity : AppCompatActivity() {
                 binding.titleArea.setText(dataModel?.title)
                 binding.textArea.setText(dataModel?.content)
                 binding.timeArea.setText(dataModel?.time)
+
+                val myUid = FBAuth.getUid()
+                val writerUid = dataModel?.uid
+                if(myUid.equals(writerUid)){
+                    binding.boardSettingIcon.isVisible = true
+                } else {
+
+                }
             }
 
             override fun onCancelled(databaseError: DatabaseError) {
