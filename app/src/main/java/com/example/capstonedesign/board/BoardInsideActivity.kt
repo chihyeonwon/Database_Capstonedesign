@@ -91,6 +91,7 @@ class BoardInsideActivity : AppCompatActivity() {
                 val dataModel = dataSnapshot.getValue(BoardModel::class.java)
                 binding.titleArea.setText(dataModel?.title)
                 binding.textArea.setText(dataModel?.content)
+                binding.timeArea.setText(dataModel?.time)
             }
 
             override fun onCancelled(databaseError: DatabaseError) {
