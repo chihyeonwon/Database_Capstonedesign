@@ -798,3 +798,15 @@ getBoardData에서 계속 앱이 죽는 문제가 발생하여 예외가 발생�
 
 수정 페이지에 게시글보기의 데이터(title, content)들이 정상적으로 들어가는 것을 알 수 있다.
 ```
+
+## 23.10.02 개발일지
+
+#### 게시글 수정 페이지 구현 -2 (이미지)
+![image](https://github.com/wonchihyeon/Database_Capstonedesign/assets/58906858/f4fb78cc-06ea-4bc8-aa7c-2a8ddd4f3d28)
+```
+게시물보기페이지에서 게시글 수정 페이지로 이미지를 받아오는 부분을 구현한다.
+
+게시물보기페이지의 getImageData함수를 복사한 다음 수정해서 사용한다.
+
+게시물 수정페이지에서 이미지가 잘 나오는 것을 알 수 있다.
+```
