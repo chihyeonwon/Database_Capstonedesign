@@ -827,3 +827,49 @@ getBoardData에서 모델의 uid를 writeUid에 저장한다음 이를 사용한
 예는 게시글 제목 test1, 내용 test1, 고양이 이미지를 게시글 수정 페이지에서 제목 test2, 내용 test2, 강아지 이미지로
 변경(수정)하는 예이다. 게시글 수정이 정상적으로 이루어지는 것을 확인했다.
 ```
+#### 로그아웃 기능 구현
+#### LOGOUT Button Layout
+![image](https://github.com/wonchihyeon/Database_Capstonedesign/assets/58906858/4e1f85ef-48cd-4679-b529-5df037cb1aff)
+![image](https://github.com/wonchihyeon/Database_Capstonedesign/assets/58906858/f31bb472-af9d-412c-8822-ebdd43e4074f)
+```
+로그아웃 등의 기능이 들어가는 setting 패키지 밑의 SettingActivity를 생성한다.
+로그아웃 버튼은 노란색 배경에 LOGOUT 텍스트를 넣어줬다.
+
+MainActivity의 settingBtn을 클릭하면 SettingActivity로 이동하고 SettingActivity 가운데의 로그아웃 버튼을 클릭하면
+IntroActivity로 이동하도록 설정한다.
+
+logout 버튼을 클릭하면 Firebase의 signOut 메서드가 실행되어 로그아웃이 되고 IntroActivity로 정상적으로 이동됨을 확인했다.
+```
+
+#### 글쓴이만 수정 삭제 가능하도록 권한 부여
+#### 새로운 사용자의 글쓰기 데이터(기존 uid와 다른 새로운 uid)
+![image](https://github.com/wonchihyeon/Database_Capstonedesign/assets/58906858/b5ed4d88-c954-46da-9c14-fdf013cdc671)
+#### 내가 쓴 글의 글보기 페이지
+![image](https://github.com/wonchihyeon/Database_Capstonedesign/assets/58906858/d778cb74-b038-40a1-a8a2-d1c7d51ae469)
+#### 내가 쓰지 않은 글의 글보기 페이지
+![image](https://github.com/wonchihyeon/Database_Capstonedesign/assets/58906858/a98a4ed0-d246-480d-949c-e4d927af938c)
+```
+게시글의 수정 삭제는 글쓴이만 수정 삭제가 가능하도록 해야 한다.
+즉 게시글의 데이터베이스의 uid가 현재 로그인한 uid와 다르면 수정 삭제가 불가능해야 한다.
+
+이를 위해 로그아웃을 진행한 후에 새로운 익명 로그인을 시도하고 title:test3, content:test3의 새로운 게시글을 작성하였다.
+데이터베이스 안의 게시판 데이터의 uid가 새로운 값이 들어가 있는 것을 확인할 수 있다.
+
+게시물 보기 페이지(BoardInside Activity)에서 수정 삭제를 할 수 있는 권한, 즉 아이콘을 글쓴이에게만 보여주면 되는 로직처리를 하면 된다.
+
+원래 게시물 보기 페이지의 settinrgBtn visible을 invisible로 설정하고 BoardInsideActivity의 getBoardData에서 DataModel의 uid(글작성자 uid)와
+FBAuth.uid(로그인유저의 uid)를 비교해서 같다면 settingBtn의 isVisible 값을 true로 변경시켜주는 로직처리를 한다.
+
+방금 작성한 test3 글의 오른쪽 최상단에는 settingBtn이 나오지만 내가 작성하지 않은 test2 글의 오른쪽 최상단에는 settingBtn이 나오지 않는 것을
+알 수 있다.
+```
+#### 내가 쓴 글의 배경색 변경
+![image](https://github.com/wonchihyeon/Database_Capstonedesign/assets/58906858/4ca0ef36-7450-4786-9292-478c0433d0c1)
+```
+내가 쓴 글의 LinearLayout 부분을 주황색으로 칠해서 다른 글과 구분한다.
+
+BoardListLAdapter에서 item_list를 연결해주는 getView 메서드에서 boardList[position]의 uid와 FBAuth.getUid() 값이 같으면
+LinearLayout의 backgroundColor를 오렌지색으로 변경한다.
+
+내가 쓴 글은 오렌지 색으로 잘 나오는 것을 확인한다.
+```
