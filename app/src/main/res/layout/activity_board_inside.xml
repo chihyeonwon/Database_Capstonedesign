@@ -29,6 +29,7 @@
                     android:layout_height="match_parent"/>
 
                 <ImageView
+                    android:visibility="invisible"
                     android:id="@+id/boardSettingIcon"
                     android:layout_margin="10dp"
                     android:layout_width="20dp"
