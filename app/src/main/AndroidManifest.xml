@@ -16,6 +16,9 @@
         android:theme="@style/Theme.CapstoneDesign"
         tools:targetApi="31">
         <activity
+            android:name=".setting.SettingActivity"
+            android:exported="false" />
+        <activity
             android:name=".board.BoardEditActivity"
             android:exported="false" />
         <activity
