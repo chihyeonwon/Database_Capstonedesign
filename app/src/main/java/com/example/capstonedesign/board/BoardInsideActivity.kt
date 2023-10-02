@@ -88,16 +88,9 @@ class BoardInsideActivity : AppCompatActivity() {
         val postListner = object: ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
 
-                try {
-                    val dataModel = dataSnapshot.getValue(BoardModel::class.java)
-
-                    binding.titleArea.text = dataModel!!.title
-                    binding.textArea.text = dataModel!!.content
-                    binding.timeArea.text = dataModel!!.time
-
-                } catch(e: Exception) {
-                    Log.d(TAG,"삭제완료")
-                }
+                val dataModel = dataSnapshot.getValue(BoardModel::class.java)
+                binding.titleArea.setText(dataModel?.title)
+                binding.textArea.setText(dataModel?.content)
             }
 
             override fun onCancelled(databaseError: DatabaseError) {
