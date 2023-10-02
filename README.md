@@ -810,3 +810,20 @@ getBoardData에서 계속 앱이 죽는 문제가 발생하여 예외가 발생�
 
 게시물 수정페이지에서 이미지가 잘 나오는 것을 알 수 있다.
 ```
+#### 게시글 수정 기능 구현 完
+![image](https://github.com/wonchihyeon/Database_Capstonedesign/assets/58906858/2f21b3fd-8116-4faf-b719-b3976efaa063)
+
+```
+수정한 데이터를 파이어베이스에 집어넣는다.
+edit 버튼을 누르면 boardRef 경로의 데이터베이스에 변경한 텍스트들을 넣어주는 editBoardData 메서드를 만들고
+이벤트 처리를 해준다. (boardRef.child(key).setValue(BoardModel(binding.titleArea.text.toString, ~)
+
+이 글을 수정하고 삭제할 수 있는 것은 로그인한 사용자, 즉 FBAuth.getUid()가 되는데 따로 writeUid 변수를 만들어서
+getBoardData에서 모델의 uid를 writeUid에 저장한다음 이를 사용한다.
+
+게시물 수정 페이지의 이미지를 클릭했을 때 이미지를 업로드하는 ImageUpload도 복사해서 사용한다.
+수정 버튼을 눌렀을 때 imageUpload가 이루어져서 덮어써지도록 수정하였다.
+
+예는 게시글 제목 test1, 내용 test1, 고양이 이미지를 게시글 수정 페이지에서 제목 test2, 내용 test2, 강아지 이미지로
+변경(수정)하는 예이다. 게시글 수정이 정상적으로 이루어지는 것을 확인했다.
+```
