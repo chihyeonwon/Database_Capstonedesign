@@ -893,3 +893,25 @@ task가 실패하면 이미지 영역을 보이지않게 설정한다.(visible =
 
 게시물 보기 페이지의 최하단에 댓글을 입력할 수 있는 입력창과 입력 버튼이 정상적으로 들어갔다.
 ```
+#### 댓글 데이터 구조
+![image](https://github.com/wonchihyeon/Database_Capstonedesign/assets/58906858/5f80ed2e-d81b-4d78-b152-b69b25734fa2)     
+![image](https://github.com/wonchihyeon/Database_Capstonedesign/assets/58906858/effd8b9d-db9d-4861-aad0-4ee8b29efb37)
+#### 댓글 기능 구현
+![image](https://github.com/wonchihyeon/Database_Capstonedesign/assets/58906858/02558d9f-ec84-4146-a8bb-3aa63d5643c2)
+```
+댓글 창에 입력한 텍스트를 파이어베이스의 데이터베이스에 저장한다.
+
+댓글 입력 창과 버튼 각각에 적절한 id값을 부여하고 게시물 보기 페이지에서 이벤트 처리를 구현한다.
+
+댓글 데이터의 데이터구조는 comment Ref 밑에 BoardKey -CommentKey - CommentData 아키텍처를 설계한다.
+
+데이터 형태가 String인 commentTitle 한개만 들어가는 CommentModel 데이터 모델을 작성한다.
+
+commentTitle의 값으로는 commentArea에 입력된 텍스트 데이터가 들어가도록 한다.
+
+입력버튼을 누르고 나면 토스트메시지와 함께 입력한 텍스트가 사라지도록 한다.(setText(""))
+
+댓글을 입력하고 입력한 텍스트 데이터(hello)가 데이터베이스에 잘 들어가는 것을 확인할 수 있다.
+
+다음 작업으로는 리스트뷰에 입력한 텍스트 데이터들을 모두 불러와서 보여주는 작업을 수행한다.
+```
