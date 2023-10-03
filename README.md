@@ -873,8 +873,23 @@ LinearLayout의 backgroundColor를 오렌지색으로 변경한다.
 내가 쓴 글은 오렌지 색으로 잘 나오는 것을 확인한다.
 ```
 ## 23.10.03 개발일지
-#### 댓글 레이아웃 UI 설계
+#### 댓글 영역 레이아웃 설계
+#### 이미지가 있을 때 댓글 영역
+![image](https://github.com/wonchihyeon/Database_Capstonedesign/assets/58906858/6ad1f9f6-3492-4462-a075-3a9b3cfc8162)
+#### 이미지가 없을 때 댓글 영역
+![image](https://github.com/wonchihyeon/Database_Capstonedesign/assets/58906858/73bc3d6d-7961-45d8-93cb-f2608d57621a)
 ```
 게시물 보기 레이아웃에 댓글 넣는 영역을 리스트 뷰로 구현한다.
 전체를 스크롤 뷰로 감싸고 ListView를 생성한다.
+
+이미지가 있을 때 즉 getImageData 메서드 안의 task가 성공적일 때 이미지를 보여주고
+task가 실패하면 이미지 영역을 보이지않게 설정한다.(visible = false)
+```
+#### 댓글 창 레이아웃 설계
+![image](https://github.com/wonchihyeon/Database_Capstonedesign/assets/58906858/7dc8fa26-c56c-458d-a774-f053b36462a2)
+```
+댓글 창은 스크롤뷰가 아닌 바깥에 RelativeLayout으로 최하단에 고정하여 스크롤 뷰의 영향을 받지 않게하고
+댓글을 입력하는 부분 EditText과 댓글 입력 버튼 Button을 생성하였다.
+
+게시물 보기 페이지의 최하단에 댓글을 입력할 수 있는 입력창과 입력 버튼이 정상적으로 들어갔다.
 ```
