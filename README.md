@@ -829,8 +829,7 @@ getBoardData에서 모델의 uid를 writeUid에 저장한다음 이를 사용한
 ```
 #### 로그아웃 기능 구현
 #### LOGOUT Button Layout
-![image](https://github.com/wonchihyeon/Database_Capstonedesign/assets/58906858/4e1f85ef-48cd-4679-b529-5df037cb1aff)
-![image](https://github.com/wonchihyeon/Database_Capstonedesign/assets/58906858/f31bb472-af9d-412c-8822-ebdd43e4074f)
+![image](https://github.com/wonchihyeon/Database_Capstonedesign/assets/58906858/90d1bb7f-3d81-4023-a4f4-89c280774f5b)
 ```
 로그아웃 등의 기능이 들어가는 setting 패키지 밑의 SettingActivity를 생성한다.
 로그아웃 버튼은 노란색 배경에 LOGOUT 텍스트를 넣어줬다.
@@ -843,11 +842,11 @@ logout 버튼을 클릭하면 Firebase의 signOut 메서드가 실행되어 로�
 
 #### 글쓴이만 수정 삭제 가능하도록 권한 부여
 #### 새로운 사용자의 글쓰기 데이터(기존 uid와 다른 새로운 uid)
-![image](https://github.com/wonchihyeon/Database_Capstonedesign/assets/58906858/b5ed4d88-c954-46da-9c14-fdf013cdc671)
+![image](https://github.com/wonchihyeon/Database_Capstonedesign/assets/58906858/af6a0306-737f-4497-99c3-2d25ea370295)
 #### 내가 쓴 글의 글보기 페이지
-![image](https://github.com/wonchihyeon/Database_Capstonedesign/assets/58906858/d778cb74-b038-40a1-a8a2-d1c7d51ae469)
+![image](https://github.com/wonchihyeon/Database_Capstonedesign/assets/58906858/f46b8c5c-af1f-454b-9bd5-d3bdfa87af01)
 #### 내가 쓰지 않은 글의 글보기 페이지
-![image](https://github.com/wonchihyeon/Database_Capstonedesign/assets/58906858/a98a4ed0-d246-480d-949c-e4d927af938c)
+![image](https://github.com/wonchihyeon/Database_Capstonedesign/assets/58906858/a385e041-2410-438b-afd6-8531d61ceb5c)
 ```
 게시글의 수정 삭제는 글쓴이만 수정 삭제가 가능하도록 해야 한다.
 즉 게시글의 데이터베이스의 uid가 현재 로그인한 uid와 다르면 수정 삭제가 불가능해야 한다.
@@ -864,7 +863,7 @@ FBAuth.uid(로그인유저의 uid)를 비교해서 같다면 settingBtn의 isVis
 알 수 있다.
 ```
 #### 내가 쓴 글의 배경색 변경
-![image](https://github.com/wonchihyeon/Database_Capstonedesign/assets/58906858/4ca0ef36-7450-4786-9292-478c0433d0c1)
+![image](https://github.com/wonchihyeon/Database_Capstonedesign/assets/58906858/f2c37c77-6b29-4180-8f64-2456414c0167)
 ```
 내가 쓴 글의 LinearLayout 부분을 주황색으로 칠해서 다른 글과 구분한다.
 
@@ -872,4 +871,10 @@ BoardListLAdapter에서 item_list를 연결해주는 getView 메서드에서 boa
 LinearLayout의 backgroundColor를 오렌지색으로 변경한다.
 
 내가 쓴 글은 오렌지 색으로 잘 나오는 것을 확인한다.
+```
+## 23.10.03 개발일지
+#### 댓글 레이아웃 UI 설계
+```
+게시물 보기 레이아웃에 댓글 넣는 영역을 리스트 뷰로 구현한다.
+전체를 스크롤 뷰로 감싸고 ListView를 생성한다.
 ```
