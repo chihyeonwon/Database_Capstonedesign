@@ -12,6 +12,7 @@ import androidx.core.view.isVisible
 import androidx.databinding.DataBindingUtil
 import com.bumptech.glide.Glide
 import com.example.capstonedesign.R
+import com.example.capstonedesign.comment.CommentModel
 import com.example.capstonedesign.databinding.ActivityBoardInsideBinding
 import com.example.capstonedesign.utils.FBAuth
 import com.example.capstonedesign.utils.FBRef
@@ -44,6 +45,23 @@ class BoardInsideActivity : AppCompatActivity() {
         key = intent.getStringExtra("key").toString()
         getBoardData(key)
         getImageData(key)
+
+        binding.commentBtn.setOnClickListener {
+            insertComment(key)
+        }
+    }
+
+    fun insertComment(key: String) {
+        FBRef
+            .commentRef
+            .child(key)
+            .push()
+            .setValue(CommentModel(binding.commentArea.text.toString()))
+
+        // 댓글 입력 완료 토스트 메시지를 띄운다.
+        Toast.makeText(this,"댓글 입력 완료",Toast.LENGTH_LONG).show()
+        // 댓글 입력 후에 입력창의 텍스트를 지운다.
+        binding.commentArea.setText("")
     }
 
     // 만든 custom_dialog를 띄우는 showDialog() 함수 생성
