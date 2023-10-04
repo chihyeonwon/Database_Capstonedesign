@@ -916,7 +916,9 @@ commentTitle의 값으로는 commentArea에 입력된 텍스트 데이터가 들
 다음 작업으로는 리스트뷰에 입력한 텍스트 데이터들을 모두 불러와서 보여주는 작업을 수행한다.
 ```
 ## 23.10.04 개발일지
-
+#### commentModel 수정
+![image](https://github.com/chihyunwon/Database_Capstonedesign/assets/58906858/839e8def-e1c6-4651-a423-1b9ce8c80774)
 ```
-
+commentModel에 시간 데이터도 들어갈 수 있도록 commentCreatedTime 변수 타입을 넣어준다.
+댓글을 입력하면 데이터베이스에 title과 시간 데이터가 들어가는 것을 알 수 있다.
 ```
