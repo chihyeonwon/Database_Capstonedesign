@@ -56,7 +56,12 @@ class BoardInsideActivity : AppCompatActivity() {
             .commentRef
             .child(key)
             .push()
-            .setValue(CommentModel(binding.commentArea.text.toString()))
+            .setValue(
+                CommentModel(
+                    binding.commentArea.text.toString(),
+                    FBAuth.getTime()
+                )
+            )
 
         // 댓글 입력 완료 토스트 메시지를 띄운다.
         Toast.makeText(this,"댓글 입력 완료",Toast.LENGTH_LONG).show()
