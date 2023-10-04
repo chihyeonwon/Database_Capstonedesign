@@ -12,6 +12,7 @@ import androidx.core.view.isVisible
 import androidx.databinding.DataBindingUtil
 import com.bumptech.glide.Glide
 import com.example.capstonedesign.R
+import com.example.capstonedesign.comment.CommentLVAdpater
 import com.example.capstonedesign.comment.CommentModel
 import com.example.capstonedesign.databinding.ActivityBoardInsideBinding
 import com.example.capstonedesign.utils.FBAuth
@@ -31,6 +32,10 @@ class BoardInsideActivity : AppCompatActivity() {
 
     private lateinit var key:String
 
+    private val commentDataList = mutableListOf<CommentModel>()
+
+    private lateinit var commentAdapter :CommentLVAdpater
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_board_inside)
@@ -49,6 +54,33 @@ class BoardInsideActivity : AppCompatActivity() {
         binding.commentBtn.setOnClickListener {
             insertComment(key)
         }
+
+        getCommentData(key)
+
+        commentAdapter = CommentLVAdpater(commentDataList)
+        binding.commentLV.adapter = commentAdapter
+    }
+
+    fun getCommentData(key: String) {
+        val postListner = object: ValueEventListener {
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
+
+                commentDataList.clear()
+
+                // dataModel에 있는 데이터를 하나씩 가져오는 부분
+                for(dataModel in dataSnapshot.children) {
+                    val item = dataModel.getValue(CommentModel::class.java)
+                    commentDataList.add(item!!)
+                }
+                commentAdapter.notifyDataSetChanged()
+            }
+
+            override fun onCancelled(databaseError: DatabaseError) {
+                Log.w(TAG, "loadPost:onCancelled", databaseError.toException())
+            }
+        }
+        FBRef.commentRef.child(key).addValueEventListener(postListner)
+
     }
 
     fun insertComment(key: String) {
