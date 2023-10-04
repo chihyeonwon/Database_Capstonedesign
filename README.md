@@ -918,7 +918,29 @@ commentTitle의 값으로는 commentArea에 입력된 텍스트 데이터가 들
 ## 23.10.04 개발일지
 #### commentModel 수정
 ![image](https://github.com/chihyunwon/Database_Capstonedesign/assets/58906858/839e8def-e1c6-4651-a423-1b9ce8c80774)
+#### comment_list_item layout
+![image](https://github.com/chihyunwon/Database_Capstonedesign/assets/58906858/d5315d46-eb46-4c91-9599-9537071ea638)
 ```
 commentModel에 시간 데이터도 들어갈 수 있도록 commentCreatedTime 변수 타입을 넣어준다.
 댓글을 입력하면 데이터베이스에 title과 시간 데이터가 들어가는 것을 알 수 있다.
+
+comment_list_item layout 파일을 작성한다. layout 파일은 board_list_item을 일부 수정하여 title과 time이 들어가도록 한다.
+
+리스트와 연결할 CommentLVAdapter 이름의 어댑터파일을 만들어 준다. BoardLVAdapter 코드를 복사한 다음 일부를 수정한다.
+
+게시물보기페이지(BoardInsideActivity)에서 comment data를 모두 받아오는 getCommentData 메서드를 작성한다.
+코드는 TalkFragment의 getFBBoardData의 postListener 부분을 복사한 다음 일부를 수정한다.
+
+어댑터를 만들고 어댑터와 리스트뷰를 연결한다. 
+```
+#### 댓글 기능 구현
+#### 댓글 기능 test1
+![image](https://github.com/chihyunwon/Database_Capstonedesign/assets/58906858/ee9c9016-14d7-4c32-96e6-89c6070eac2f)
+![image](https://github.com/chihyunwon/Database_Capstonedesign/assets/58906858/426d9a3b-b0c3-4910-a741-7e84c2b46891)
+#### 댓글 기능 test2
+![image](https://github.com/chihyunwon/Database_Capstonedesign/assets/58906858/55694775-788b-4e61-b858-2d8f98440738)
+![image](https://github.com/chihyunwon/Database_Capstonedesign/assets/58906858/a0473661-46ba-46e0-bc58-d67e1fac0162)
+```
+댓글 기능을 테스트하기 위해서 this is test 댓글을 입력창에 작성한 후에 입력 버튼을 클릭하면
+정상적으로 댓글이 입력되는 것을 확인할 수 있다.
 ```
