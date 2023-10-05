@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.webkit.WebView
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.findNavController
 import com.example.capstonedesign.R
@@ -51,6 +52,11 @@ class StoreFragment : Fragment() {
             it.findNavController().navigate(R.id.action_homeFragment_to_storeFragment)
         }
 
-        return binding.root
+        // Inflate the layout for this fragment
+        val view = inflater.inflate(R.layout.fragment_store,container, false)
+        val webView: WebView = view.findViewById(R.id.storeWebView)
+        webView.loadUrl("https://www.zigbang.com/")
+
+        return view
     }
 }
