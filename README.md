@@ -1,4 +1,4 @@
-![image](https://github.com/chihyunwon/Database_Capstonedesign/assets/58906858/301f3238-2e08-42bb-9caf-2a737e98acce)# 데이터베이스응용_캡스톤디자인 프로젝트
+# 데이터베이스응용_캡스톤디자인 프로젝트
 컴퓨터공학과 캡스톤디자인 프로젝트 정리입니다.
 
 ## 23.09.06 프로젝트 개발 일지
