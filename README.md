@@ -1,4 +1,4 @@
-# 데이터베이스응용_캡스톤디자인 프로젝트
+![image](https://github.com/chihyunwon/Database_Capstonedesign/assets/58906858/301f3238-2e08-42bb-9caf-2a737e98acce)# 데이터베이스응용_캡스톤디자인 프로젝트
 컴퓨터공학과 캡스톤디자인 프로젝트 정리입니다.
 
 ## 23.09.06 프로젝트 개발 일지
@@ -945,7 +945,13 @@ comment_list_item layout 파일을 작성한다. layout 파일은 board_list_ite
 정상적으로 댓글이 입력되는 것을 확인할 수 있다.
 ```
 ## 23.10.05 개발일지
-
+#### Tip Fragment 레이아웃 다듬기
+![image](https://github.com/chihyunwon/Database_Capstonedesign/assets/58906858/03823a39-2723-4898-8a29-98927724bad3)
 ```
-
+팁 화면의 각 컨텐츠 밑에 category 문자열을 입력하였다.
+```
+#### Bookmark Fragment 레이아웃 다듬기
+![image](https://github.com/chihyunwon/Database_Capstonedesign/assets/58906858/f7bbb085-f420-42d7-bfab-cbf3adff2c30)
+```
+북마크또한 margin, cardView 등을 이용하여 다듬었다.
 ```
