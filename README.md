@@ -936,22 +936,5 @@ comment_list_item layout 파일을 작성한다. layout 파일은 board_list_ite
 #### 댓글 기능 구현
 #### 댓글 기능 test1
 ![image](https://github.com/chihyunwon/Database_Capstonedesign/assets/58906858/ee9c9016-14d7-4c32-96e6-89c6070eac2f)
-![image](https://github.com/chihyunwon/Database_Capstonedesign/assets/58906858/426d9a3b-b0c3-4910-a741-7e84c2b46891)
-#### 댓글 기능 test2
-![image](https://github.com/chihyunwon/Database_Capstonedesign/assets/58906858/55694775-788b-4e61-b858-2d8f98440738)
-![image](https://github.com/chihyunwon/Database_Capstonedesign/assets/58906858/a0473661-46ba-46e0-bc58-d67e1fac0162)
-```
-댓글 기능을 테스트하기 위해서 this is test 댓글을 입력창에 작성한 후에 입력 버튼을 클릭하면
-정상적으로 댓글이 입력되는 것을 확인할 수 있다.
-```
-## 23.10.05 개발일지
-#### Tip Fragment 레이아웃 다듬기
-![image](https://github.com/chihyunwon/Database_Capstonedesign/assets/58906858/03823a39-2723-4898-8a29-98927724bad3)
-```
-팁 화면의 각 컨텐츠 밑에 category 문자열을 입력하였다.
-```
-#### Bookmark Fragment 레이아웃 다듬기
-![image](https://github.com/chihyunwon/Database_Capstonedesign/assets/58906858/f7bbb085-f420-42d7-bfab-cbf3adff2c30)
-```
-북마크또한 margin, cardView 등을 이용하여 다듬었다.
+![im가 정상적으로 출력되는 것을 알 수 있다.
 ```
