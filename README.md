@@ -936,5 +936,36 @@ comment_list_item layout 파일을 작성한다. layout 파일은 board_list_ite
 #### 댓글 기능 구현
 #### 댓글 기능 test1
 ![image](https://github.com/chihyunwon/Database_Capstonedesign/assets/58906858/ee9c9016-14d7-4c32-96e6-89c6070eac2f)
-![im가 정상적으로 출력되는 것을 알 수 있다.
+![image](https://github.com/chihyunwon/Database_Capstonedesign/assets/58906858/426d9a3b-b0c3-4910-a741-7e84c2b46891)
+#### 댓글 기능 test2
+![image](https://github.com/chihyunwon/Database_Capstonedesign/assets/58906858/55694775-788b-4e61-b858-2d8f98440738)
+![image](https://github.com/chihyunwon/Database_Capstonedesign/assets/58906858/a0473661-46ba-46e0-bc58-d67e1fac0162)
+```
+댓글 기능을 테스트하기 위해서 this is test 댓글을 입력창에 작성한 후에 입력 버튼을 클릭하면
+정상적으로 댓글이 입력되는 것을 확인할 수 있다.
+```
+## 23.10.05 개발일지
+#### Tip Fragment 레이아웃 다듬기
+![image](https://github.com/chihyunwon/Database_Capstonedesign/assets/58906858/03823a39-2723-4898-8a29-98927724bad3)
+```
+팁 화면의 각 컨텐츠 밑에 category 문자열을 입력하였다.
+```
+#### Bookmark Fragment 레이아웃 다듬기
+![image](https://github.com/chihyunwon/Database_Capstonedesign/assets/58906858/f7bbb085-f420-42d7-bfab-cbf3adff2c30)
+```
+북마크또한 margin, cardView 등을 이용하여 다듬었다.
+```
+#### Store Fragment 레이아웃 다듬기
+![image](https://github.com/chihyunwon/Database_Capstonedesign/assets/58906858/37edae41-524e-46ae-a190-3bbd490e4120)
+```
+Store 화면은 WebView를 넣어주었다. 직방(https://www.zigbang.com/) 사이트의 URI를 넘겨주었다.
+스토어 Fragment를 누르면 정상적으로 직방 사이트가 나오는 것을 알 수 있다.
+```
+#### Home Fragment 레이아웃 다듬기
+![image](https://github.com/chihyunwon/Database_Capstonedesign/assets/58906858/6e537f34-a41b-4736-a411-64e95bac4757)
+```
+홈 화면에는 카테고리 이미지와 게시판 이미지, 북마크 레이아웃을 만들었다.
+이중에 북마크 레이아웃만 어댑터와 리스터뷰를 연결하여 처리하였다.
+
+카테고리이미지와 게시판이미지는 이미지일뿐 작동하지 않는다. 필요하면 적절한 이미지와 글을 작성하면 될 것 같다.
 ```
