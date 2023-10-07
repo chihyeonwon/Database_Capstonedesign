@@ -973,7 +973,7 @@ Store 화면은 WebView를 넣어주었다. 직방(https://www.zigbang.com/) 사
 [Icon Generator](https://romannurik.github.io/AndroidAssetStudio/icons-launcher.html#foreground.type=text&foreground.text.text=calendar&foreground.text.font=Gentium%20Book%20Plus&foreground.space.trim=1&foreground.space.pad=0.5&foreColor=rgb(255%2C%20235%2C%2059)&backColor=rgb(0%2C%200%2C%200)&crop=0&backgroundShape=square&effects=none&name=ic_launcher)      
 ![image](https://github.com/chihyunwon/Database_Capstonedesign/assets/58906858/e3dae3f4-3bbb-4b63-bf8f-43571c97d708)    
 #### Icon Image
-![image](https://github.com/chihyunwon/Database_Capstonedesign/assets/58906858/29edeaa0-5c55-44ca-8426-6b095040ae91)
+![image](https://github.com/chihyunwon/Database_Capstonedesign/assets/58906858/5d94a6e7-6b12-45bb-92c8-9a1414c0089e)
 ```
 Icon Generator 사이트에서 아이콘을 생성한 후에 path에서 생성한 아이콘이미지를 추가한다.
 이름을 ic_main으로하고 next - finish를 누른다.
