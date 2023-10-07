@@ -980,3 +980,11 @@ Icon Generator 사이트에서 아이콘을 생성한 후에 path에서 생성�
 
 AndroidManifest의 ic_launcher 부분을 ic_main으로 수정한 후 아이콘이 적용되었는 지 확인한다.
 ```
+#### 앱 이름 수정하기
+![image](https://github.com/chihyunwon/Database_Capstonedesign/assets/58906858/e44aac6b-1394-4467-a65e-c276210257c0)    
+![image](https://github.com/chihyunwon/Database_Capstonedesign/assets/58906858/f01999d8-1bb5-4c1c-a7a4-dfbf426d8cc7)    
+```
+app > res > value > strings.xml 파일로 이동해서 strings.xml파일을 열고 CapstoneDesign 부분을 자취생 키우기로 변경한다.
+
+에뮬레이터를 실행하고 앱 이름이 정상적으로 수정되어있는 것을 확인한다.
+```
