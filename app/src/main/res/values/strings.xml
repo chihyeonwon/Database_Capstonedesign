@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">자취생으로 살아남기</string>
+    <string name="app_name">자취생 레시피</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

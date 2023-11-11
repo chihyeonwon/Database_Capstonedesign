@@ -1,6 +1,7 @@
-  {
+{
   "project_info": {
     "project_number": "20559869652",
+    "firebase_url": "https://capstonedesign-8be9f-default-rtdb.firebaseio.com",
     "project_id": "capstonedesign-8be9f",
     "storage_bucket": "capstonedesign-8be9f.appspot.com"
   },
@@ -10,6 +11,35 @@
         "mobilesdk_app_id": "1:20559869652:android:73153f90d16e4aa19ced41",
         "android_client_info": {
           "package_name": "com.example.capstonedesign"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "20559869652-n0laojssglm29bqn273m78c2nsqmldh3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCYPdBN7RO8LanOghHHlIOA04h9afTQjp0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "20559869652-n0laojssglm29bqn273m78c2nsqmldh3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:20559869652:android:c82f61c1f932c0f49ced41",
+        "android_client_info": {
+          "package_name": "com.wonchihyeon.livingrecipe"
         }
       },
       "oauth_client": [

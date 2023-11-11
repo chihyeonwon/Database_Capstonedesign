@@ -5,10 +5,10 @@ plugins {
 }
 
 android {
-    namespace 'com.example.capstonedesign'
+    namespace 'com.wonchihyeon.livingrecipe'
     compileSdk 34
     defaultConfig {
-        applicationId "com.example.capstonedesign"
+        applicationId "com.wonchihyeon.livingrecipe"
         minSdk 21
         targetSdk 34
         versionCode 1
