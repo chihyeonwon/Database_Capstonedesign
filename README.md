@@ -1,5 +1,9 @@
 # 데이터베이스응용_캡스톤디자인 프로젝트
 컴퓨터공학과 캡스톤디자인 프로젝트 정리입니다.
+## 플레이스토어 앱 배포
+[구글플레이스토어 앱 링크](https://play.google.com/store/apps/details?id=com.wonchihyeon.livingrecipe)
+![image](https://github.com/mr-won/Database_Capstonedesign/assets/58906858/8683b38e-6b1f-4bc5-b15d-6be19dd1a790)
+
 
 ## 23.09.06 프로젝트 개발 일지
 #### [SplashActivity 3초간 지속 후 IntroActivity로 변경]
