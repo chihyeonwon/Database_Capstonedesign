@@ -48,7 +48,7 @@ class BoardWriteActivity : AppCompatActivity() {
             Toast.makeText(this,"게시글 입력 완료", Toast.LENGTH_LONG).show()
 
             // 이미지를 Firebase 스토리지에 업로드
-            if(isImageUpload == true) {
+            if(isImageUpload) {
                 imageUpload(key)
             }
 

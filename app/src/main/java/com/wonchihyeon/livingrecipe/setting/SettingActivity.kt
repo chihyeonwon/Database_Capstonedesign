@@ -19,6 +19,7 @@ class SettingActivity : AppCompatActivity() {
         auth = FirebaseAuth.getInstance()
 
         val logoutBtn: Button = findViewById(R.id.logoutBtn)
+        val signoutBtn: Button = findViewById(R.id.signoutBtn)
 
         logoutBtn.setOnClickListener {
             auth.signOut()
@@ -29,6 +30,18 @@ class SettingActivity : AppCompatActivity() {
             startActivity(intent)
 
             Toast.makeText(this,"로그아웃", Toast.LENGTH_LONG).show()
+        }
+
+        signoutBtn.setOnClickListener {
+
+            auth.currentUser?.delete()
+
+            // IntroActivity로 화면 이동
+            val intent = Intent(this, IntroActivity::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+            startActivity(intent)
+
+            Toast.makeText(this,"회원탈퇴", Toast.LENGTH_LONG).show()
         }
     }
 }
