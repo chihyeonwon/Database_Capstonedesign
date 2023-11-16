@@ -921,9 +921,11 @@ commentTitle의 값으로는 commentArea에 입력된 텍스트 데이터가 들
 ```
 ## 23.10.04 개발일지
 #### commentModel 수정
-![image](https://github.com/chihyunwon/Database_Capstonedesign/assets/58906858/839e8def-e1c6-4651-a423-1b9ce8c80774)
+![image](https://github.com/mr-won/Database_Capstonedesign/assets/58906858/6e0b0bd8-813c-4720-9b8d-9a06d462e257)
+
 #### comment_list_item layout
-![image](https://github.com/chihyunwon/Database_Capstonedesign/assets/58906858/d5315d46-eb46-4c91-9599-9537071ea638)
+![image](https://github.com/mr-won/Database_Capstonedesign/assets/58906858/4c742b30-dcac-42fb-a702-eff82cbb5787)
+
 ```
 commentModel에 시간 데이터도 들어갈 수 있도록 commentCreatedTime 변수 타입을 넣어준다.
 댓글을 입력하면 데이터베이스에 title과 시간 데이터가 들어가는 것을 알 수 있다.
@@ -939,11 +941,9 @@ comment_list_item layout 파일을 작성한다. layout 파일은 board_list_ite
 ```
 #### 댓글 기능 구현
 #### 댓글 기능 test1
-![image](https://github.com/chihyunwon/Database_Capstonedesign/assets/58906858/ee9c9016-14d7-4c32-96e6-89c6070eac2f)
-![image](https://github.com/chihyunwon/Database_Capstonedesign/assets/58906858/426d9a3b-b0c3-4910-a741-7e84c2b46891)
-#### 댓글 기능 test2
-![image](https://github.com/chihyunwon/Database_Capstonedesign/assets/58906858/55694775-788b-4e61-b858-2d8f98440738)
-![image](https://github.com/chihyunwon/Database_Capstonedesign/assets/58906858/a0473661-46ba-46e0-bc58-d67e1fac0162)
+![image](https://github.com/mr-won/Database_Capstonedesign/assets/58906858/3db4199d-d746-4bdd-a86e-f2a56a275cde)
+![image](https://github.com/mr-won/Database_Capstonedesign/assets/58906858/cc2cc85b-9838-45aa-a94c-c6c670a0a2e8)
+
 ```
 댓글 기능을 테스트하기 위해서 this is test 댓글을 입력창에 작성한 후에 입력 버튼을 클릭하면
 정상적으로 댓글이 입력되는 것을 확인할 수 있다.
@@ -955,18 +955,18 @@ comment_list_item layout 파일을 작성한다. layout 파일은 board_list_ite
 팁 화면의 각 컨텐츠 밑에 category 문자열을 입력하였다.
 ```
 #### Bookmark Fragment 레이아웃 다듬기
-![image](https://github.com/chihyunwon/Database_Capstonedesign/assets/58906858/f7bbb085-f420-42d7-bfab-cbf3adff2c30)
+![image](https://github.com/mr-won/Database_Capstonedesign/assets/58906858/b76587c5-d151-4628-b41c-a4c879f63211)
 ```
 북마크또한 margin, cardView 등을 이용하여 다듬었다.
 ```
 #### Store Fragment 레이아웃 다듬기
-![image](https://github.com/chihyunwon/Database_Capstonedesign/assets/58906858/37edae41-524e-46ae-a190-3bbd490e4120)
+![image](https://github.com/mr-won/Database_Capstonedesign/assets/58906858/ce0e45e2-1686-41db-bde7-9f85f5b58ac6)
 ```
 Store 화면은 WebView를 넣어주었다. 직방(https://www.zigbang.com/) 사이트의 URI를 넘겨주었다.
 스토어 Fragment를 누르면 정상적으로 직방 사이트가 나오는 것을 알 수 있다.
 ```
 #### Home Fragment 레이아웃 다듬기
-![image](https://github.com/chihyunwon/Database_Capstonedesign/assets/58906858/6e537f34-a41b-4736-a411-64e95bac4757)
+![image](https://github.com/mr-won/Database_Capstonedesign/assets/58906858/e15f214d-140f-4cf3-8ad5-d6e918f6eeab)
 ```
 홈 화면에는 카테고리 이미지와 게시판 이미지, 북마크 레이아웃을 만들었다.
 이중에 북마크 레이아웃만 어댑터와 리스터뷰를 연결하여 처리하였다.
@@ -974,10 +974,9 @@ Store 화면은 WebView를 넣어주었다. 직방(https://www.zigbang.com/) 사
 카테고리이미지와 게시판이미지는 이미지일뿐 작동하지 않는다. 필요하면 적절한 이미지와 글을 작성하면 될 것 같다.
 ```
 ## 23.10.07 개발일지
-[Icon Generator](https://romannurik.github.io/AndroidAssetStudio/icons-launcher.html#foreground.type=text&foreground.text.text=calendar&foreground.text.font=Gentium%20Book%20Plus&foreground.space.trim=1&foreground.space.pad=0.5&foreColor=rgb(255%2C%20235%2C%2059)&backColor=rgb(0%2C%200%2C%200)&crop=0&backgroundShape=square&effects=none&name=ic_launcher)      
-![image](https://github.com/chihyunwon/Database_Capstonedesign/assets/58906858/e3dae3f4-3bbb-4b63-bf8f-43571c97d708)    
+[Icon Generator](https://romannurik.github.io/AndroidAssetStudio/icons-launcher.html#foreground.type=text&foreground.text.text=calendar&foreground.text.font=Gentium%20Book%20Plus&foreground.space.trim=1&foreground.space.pad=0.5&foreColor=rgb(255%2C%20235%2C%2059)&backColor=rgb(0%2C%200%2C%200)&crop=0&backgroundShape=square&effects=none&name=ic_launcher)       
 #### Icon Image
-![image](https://github.com/chihyunwon/Database_Capstonedesign/assets/58906858/5d94a6e7-6b12-45bb-92c8-9a1414c0089e)
+![image](https://github.com/mr-won/Database_Capstonedesign/assets/58906858/36ca0797-9bfa-41eb-a78b-758a8b7b2ebf)      
 ```
 Icon Generator 사이트에서 아이콘을 생성한 후에 path에서 생성한 아이콘이미지를 추가한다.
 이름을 ic_main으로하고 next - finish를 누른다.
@@ -985,8 +984,7 @@ Icon Generator 사이트에서 아이콘을 생성한 후에 path에서 생성�
 AndroidManifest의 ic_launcher 부분을 ic_main으로 수정한 후 아이콘이 적용되었는 지 확인한다.
 ```
 #### 앱 이름 수정하기
-![image](https://github.com/chihyunwon/Database_Capstonedesign/assets/58906858/e44aac6b-1394-4467-a65e-c276210257c0)    
-![image](https://github.com/chihyunwon/Database_Capstonedesign/assets/58906858/f01999d8-1bb5-4c1c-a7a4-dfbf426d8cc7)    
+![image](https://github.com/mr-won/Database_Capstonedesign/assets/58906858/6d4347d2-2307-481a-88a9-a796887e3c6c)
 ```
 app > res > value > strings.xml 파일로 이동해서 strings.xml파일을 열고 CapstoneDesign 부분을 자취생 키우기로 변경한다.
 
