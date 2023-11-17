@@ -11,14 +11,7 @@ import androidx.navigation.findNavController
 import com.wonchihyeon.livingrecipe.R
 import com.wonchihyeon.livingrecipe.databinding.FragmentStoreBinding
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-
-/**
- * A simple [Fragment] subclass.
- * Use the [StoreFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
+// 스토어 페이지
 class StoreFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private lateinit var binding: FragmentStoreBinding
@@ -52,7 +45,7 @@ class StoreFragment : Fragment() {
             it.findNavController().navigate(R.id.action_homeFragment_to_storeFragment)
         }
 
-        // Inflate the layout for this fragment
+        // 직방 url을 웹뷰의 형태로 제공한다.
         val view = inflater.inflate(R.layout.fragment_store,container, false)
         val webView: WebView = view.findViewById(R.id.storeWebView)
         webView.loadUrl("https://www.zigbang.com/")

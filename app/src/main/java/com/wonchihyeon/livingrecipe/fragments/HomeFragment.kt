@@ -19,16 +19,7 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.ValueEventListener
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [HomeFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
+// 홈 페이지
 class HomeFragment : Fragment() {
 
     private lateinit var binding:FragmentHomeBinding
@@ -85,6 +76,7 @@ class HomeFragment : Fragment() {
         return binding.root
     }
 
+    // 카테고리 데이터를 가져오는 함수
     private fun getCategoryData() {
         val postListner = object: ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {

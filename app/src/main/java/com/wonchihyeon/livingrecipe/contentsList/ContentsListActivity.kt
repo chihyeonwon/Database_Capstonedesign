@@ -15,6 +15,7 @@ import com.google.firebase.database.ValueEventListener
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 
+// 컨텐츠의 리스트를 보여주는 페이지
 class ContentsListActivity : AppCompatActivity() {
 
     lateinit var myRef : DatabaseReference

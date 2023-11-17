@@ -10,6 +10,7 @@ import com.wonchihyeon.livingrecipe.R
 import com.wonchihyeon.livingrecipe.databinding.ActivityJoinBinding
 import com.google.firebase.auth.FirebaseAuth
 
+// 회원가입 페이지
 class JoinActivity : AppCompatActivity() {
 
     private lateinit var auth: FirebaseAuth
@@ -56,7 +57,8 @@ class JoinActivity : AppCompatActivity() {
                 Toast.makeText(this,"비밀번호를 6자리 이상으로 입력해주세요", Toast.LENGTH_LONG).show()
                 var isGoToJoin = false
             }
-
+            
+            // 회원가입에 성공하면 성공메시지와 함께 인트로페이지로 이동, 실패하면 실패메시지만 출력
             if(isGoToJoin) {
                 auth.createUserWithEmailAndPassword(email,password1)
                     .addOnCompleteListener(this) { task ->

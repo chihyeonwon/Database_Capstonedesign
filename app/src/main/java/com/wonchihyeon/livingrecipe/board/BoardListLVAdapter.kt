@@ -10,6 +10,7 @@ import android.widget.TextView
 import com.wonchihyeon.livingrecipe.R
 import com.wonchihyeon.livingrecipe.utils.FBAuth
 
+// 리스트뷰와 게시글 데이터를 연결해주는 게시물 리스트 어댑터
 class BoardListLVAdapter(val boardList : MutableList<BoardModel>): BaseAdapter() {
     override fun getCount(): Int {
         return boardList.size

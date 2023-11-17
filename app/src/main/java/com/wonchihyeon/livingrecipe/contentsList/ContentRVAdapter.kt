@@ -13,6 +13,7 @@ import com.wonchihyeon.livingrecipe.R
 import com.wonchihyeon.livingrecipe.utils.FBAuth
 import com.wonchihyeon.livingrecipe.utils.FBRef
 
+// 컨텐츠 데이터와 리사이클러뷰를 연결해주는 어댑터
 class ContentRVAdapter(val context: Context,
                        val items: ArrayList<ContentModel>,
                        val keyList : ArrayList<String>,

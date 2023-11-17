@@ -16,6 +16,7 @@ import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.ktx.storage
 import java.io.ByteArrayOutputStream
 
+// 게시글 작성 페이지
 class BoardWriteActivity : AppCompatActivity() {
 
     private lateinit var binding : ActivityBoardWriteBinding
@@ -27,6 +28,7 @@ class BoardWriteActivity : AppCompatActivity() {
 
         binding = DataBindingUtil.setContentView(this,R.layout.activity_board_write)
 
+        // 게시글 작성 버튼을 눌렀을 때 파이어베이스에 게시글과 이미지를 넣는다.
         binding.writeBtn.setOnClickListener {
 
             val title = binding.titleArea.text.toString()
@@ -41,6 +43,7 @@ class BoardWriteActivity : AppCompatActivity() {
             // 키부터 생성하고 데이터베이스에 저장하도록 수정
             val key = FBRef.boardRef.push().key.toString()
 
+            // 파이어 베이스에 데이터를 저장한다.
             FBRef.boardRef
                 .child(key) // 랜덤한 값
                 .setValue(BoardModel(title,content,uid,time))
@@ -54,7 +57,7 @@ class BoardWriteActivity : AppCompatActivity() {
 
             finish()
         }
-
+        // 이미지 영역을 클릭했을 때 이미지를 업로드한다.
         binding.imageArea.setOnClickListener {
             val gallery = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.INTERNAL_CONTENT_URI)
             startActivityForResult(gallery, 100)
@@ -62,6 +65,7 @@ class BoardWriteActivity : AppCompatActivity() {
         }
     }
 
+    // 이미지를 업로드하는 함수
     private fun imageUpload(key: String) {
 
         val storage = Firebase.storage

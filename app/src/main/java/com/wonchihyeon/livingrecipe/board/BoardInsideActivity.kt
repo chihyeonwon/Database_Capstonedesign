@@ -24,6 +24,7 @@ import com.google.firebase.database.ValueEventListener
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.ktx.storage
 
+// 게시글 보기 페이지
 class BoardInsideActivity : AppCompatActivity() {
 
     private val TAG = BoardInsideActivity::class.java.simpleName
@@ -51,6 +52,7 @@ class BoardInsideActivity : AppCompatActivity() {
         getBoardData(key)
         getImageData(key)
 
+        // 댓글 입력 버튼을 누르면 댓글을 데이터베이스에 넣는다.
         binding.commentBtn.setOnClickListener {
             insertComment(key)
         }
@@ -61,6 +63,7 @@ class BoardInsideActivity : AppCompatActivity() {
         binding.commentLV.adapter = commentAdapter
     }
 
+    // 댓글 데이터를 받아오는 함수
     fun getCommentData(key: String) {
         val postListner = object: ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
@@ -83,6 +86,7 @@ class BoardInsideActivity : AppCompatActivity() {
 
     }
 
+    // 댓글 데이터를 데이터베이스에 입력하는 함수
     fun insertComment(key: String) {
         FBRef
             .commentRef
@@ -125,22 +129,24 @@ class BoardInsideActivity : AppCompatActivity() {
             finish()
         }
     }
+    // 이미지 데이터를 받아오는 함수
     private fun getImageData(key: String) {
         val storageReference = Firebase.storage.reference.child(key + ".png")
 
         val imageViewFromFB = binding.getImageArea
 
-        storageReference.downloadUrl.addOnCompleteListener(OnCompleteListener { task->
-            if(task.isSuccessful) {
+        storageReference.downloadUrl.addOnCompleteListener(OnCompleteListener { task ->
+            if (task.isSuccessful) {
                 Glide.with(this)
                     .load(task.result)
                     .into(imageViewFromFB)
             } else {
-                binding.getImageArea.isVisible= false
+                binding.getImageArea.isVisible = false
             }
         })
     }
 
+    // 게시글 데이터를 가져오는 함수
     private fun getBoardData(key: String) {
         val postListner = object: ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {

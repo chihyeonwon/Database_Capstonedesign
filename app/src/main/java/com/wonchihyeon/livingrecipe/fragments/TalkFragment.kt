@@ -20,14 +20,7 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.ValueEventListener
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-
-/**
- * A simple [Fragment] subclass.
- * Use the [TalkFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
+// 톡 페이지
 class TalkFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private lateinit var binding: FragmentTalkBinding
@@ -56,6 +49,7 @@ class TalkFragment : Fragment() {
         boardRVAdapter = BoardListLVAdapter(boardDataList)
         binding.boardListView.adapter = boardRVAdapter
 
+        // 게시글 리스트 중 하나를 클릭했을 때
         binding.boardListView.setOnItemClickListener { parent, view, position, id ->
             /*val intent = Intent(context,BoardInsideActivity::class.java)
             intent.putExtra("title",boardDataList[position].title)
@@ -95,6 +89,7 @@ class TalkFragment : Fragment() {
         return binding.root
     }
 
+    // 게시글 데이터를 받아오는 함수
     private fun getFBBoardData() {
 
         val postListner = object: ValueEventListener {

@@ -7,6 +7,7 @@ import android.widget.BaseAdapter
 import android.widget.TextView
 import com.wonchihyeon.livingrecipe.R
 
+// 리스트뷰와 댓글 데이터를 연결해주는 어댑터
 class CommentLVAdpater(val commentList:MutableList<CommentModel>) :  BaseAdapter() {
     override fun getCount(): Int {
         return commentList.size

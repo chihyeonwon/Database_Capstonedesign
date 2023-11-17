@@ -10,6 +10,7 @@ import com.wonchihyeon.livingrecipe.R
 import com.wonchihyeon.livingrecipe.databinding.ActivityLoginBinding
 import com.google.firebase.auth.FirebaseAuth
 
+// 로그인 페이지
 class LoginActivity : AppCompatActivity() {
 
     private lateinit var auth: FirebaseAuth
@@ -23,11 +24,13 @@ class LoginActivity : AppCompatActivity() {
 
         binding = DataBindingUtil.setContentView(this,R.layout.activity_login)
 
+        // 로그인 버튼을 눌렀을 때 로그인 시도 
         binding.loginBtn.setOnClickListener {
 
             var email = binding.emailArea.text.toString()
             var password = binding.passwordArea.text.toString()
 
+            // 로그인에 성공하면 로그인성공 메시지와 함께 메인 페이지로 이동, 실패하면 실패메시지만 출력
             auth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this) { task->
                     if(task.isSuccessful) {

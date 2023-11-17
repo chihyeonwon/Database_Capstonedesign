@@ -20,14 +20,7 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.ValueEventListener
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-
-/**
- * A simple [Fragment] subclass.
- * Use the [BookmarkFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
+// 북마크 페이지
 class BookmarkFragment : Fragment() {
 
     private lateinit var binding: FragmentBookmarkBinding
@@ -80,7 +73,7 @@ class BookmarkFragment : Fragment() {
 
         return binding.root
     }
-
+    // 컨텐츠 데이터를 받아오는 함수
     private fun getCategoryData() {
         val postListner = object: ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
@@ -105,6 +98,7 @@ class BookmarkFragment : Fragment() {
         FBRef.category2.addValueEventListener(postListner)
     }
 
+    // 북마크 데이터를 가져오는 함수
     private fun getBookmarkData() {
         val postListner = object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {

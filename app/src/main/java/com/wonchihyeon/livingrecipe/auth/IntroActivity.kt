@@ -10,6 +10,7 @@ import com.wonchihyeon.livingrecipe.databinding.ActivityIntroBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.wonchihyeon.livingrecipe.R
 
+// 인트로 페이지
 class IntroActivity : AppCompatActivity() {
 
     private lateinit var auth: FirebaseAuth
@@ -23,16 +24,19 @@ class IntroActivity : AppCompatActivity() {
 
         binding = DataBindingUtil.setContentView(this, R.layout.activity_intro)
 
+        // 로그인 버튼을 눌렀을 때 로그인 페이지로 이동
         binding.loginBtn.setOnClickListener {
             val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
         }
 
+        // 회원가입 버튼을 눌렀을 때 회원가입 페이지로 이동
         binding.joinBtn.setOnClickListener {
             val intent = Intent(this, JoinActivity::class.java)
             startActivity(intent)
         }
 
+        // 익명 로그인 버튼을 눌렀을 때 로그인성공 메시지와 함께 메인화면으로 이동
         binding.noAccountBtn.setOnClickListener {
             auth.signInAnonymously()
                 .addOnCompleteListener(this) { task ->

@@ -12,14 +12,7 @@ import com.wonchihyeon.livingrecipe.R
 import com.wonchihyeon.livingrecipe.contentsList.ContentsListActivity
 import com.wonchihyeon.livingrecipe.databinding.FragmentTipBinding
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-
-/**
- * A simple [Fragment] subclass.
- * Use the [TipFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
+// 팁 페이지
 class TipFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private lateinit var binding: FragmentTipBinding
@@ -43,7 +36,8 @@ class TipFragment : Fragment() {
             intent.putExtra("category","category1")
             startActivity(intent)
         }
-
+        
+        // 두 번째 카테고리 클릭시 ContentsListActivity로 이동
         binding.category2.setOnClickListener {
             val intent = Intent(context, ContentsListActivity::class.java)
             intent.putExtra("category","category2")

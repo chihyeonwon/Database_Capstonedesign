@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.wonchihyeon.livingrecipe.R
 
+// 리사이클러뷰와 북마크 데이터를 연결해 주는 어댑터
 class BookmarkRVAdapter(val context: Context,
                        val items: ArrayList<ContentModel>,
                        val keyList : ArrayList<String>,

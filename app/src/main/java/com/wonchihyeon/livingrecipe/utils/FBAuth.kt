@@ -5,11 +5,13 @@ import java.text.SimpleDateFormat
 import java.util.Calendar
 import java.util.Locale
 
+// 파이어베이스 계정관리와 관련된 클래스
 class FBAuth {
 
     companion object {
         private lateinit var auth: FirebaseAuth
 
+        // 현재 사용자의 UID를 가져오는 getUid 함수
         fun getUid() : String {
 
             auth = FirebaseAuth.getInstance()

@@ -22,6 +22,7 @@ import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.ktx.storage
 import java.io.ByteArrayOutputStream
 
+// 게시글 수정 페이지
 class BoardEditActivity : AppCompatActivity() {
 
     private lateinit var key:String
@@ -40,8 +41,11 @@ class BoardEditActivity : AppCompatActivity() {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_board_edit)
 
         key = intent.getStringExtra("key").toString()
+
         getBoardData(key)
         getImageData(key)
+
+        // 수정 버튼을 누르면 게시글과 이미지의 수정이 일어난다.
         binding.editBtn.setOnClickListener {
             editBoardData(key)
 
@@ -50,6 +54,7 @@ class BoardEditActivity : AppCompatActivity() {
             }
         }
 
+        // 이미지 영역을 클릭했을 때 이미지 업로드를 실행한다.
         binding.imageArea.setOnClickListener {
             val gallery = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.INTERNAL_CONTENT_URI)
             startActivityForResult(gallery, 100)
@@ -57,6 +62,7 @@ class BoardEditActivity : AppCompatActivity() {
         }
     }
 
+    // 게시글을 수정하는 함수
     private fun editBoardData(key: String) {
         FBRef.boardRef
             .child(key) // 랜덤한 값
@@ -69,6 +75,7 @@ class BoardEditActivity : AppCompatActivity() {
         finish()
     }
 
+    // 이미지를 업로드하는 함수
     private fun imageUpload(key: String) {
 
         val storage = Firebase.storage
@@ -97,6 +104,8 @@ class BoardEditActivity : AppCompatActivity() {
 
         }
     }
+    
+    // 게시글을 가져오는 함수
     private fun getBoardData(key: String) {
         val postListner = object: ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
@@ -117,6 +126,7 @@ class BoardEditActivity : AppCompatActivity() {
         FBRef.boardRef.child(key).addValueEventListener(postListner)
     }
 
+    // 이미지데이터를 불러오는 함수
     private fun getImageData(key: String) {
         val storageReference = Firebase.storage.reference.child(key + ".png")
 
