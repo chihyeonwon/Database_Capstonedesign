@@ -146,9 +146,11 @@ class BoardInsideActivity : AppCompatActivity() {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
 
                 val dataModel = dataSnapshot.getValue(BoardModel::class.java)
-                binding.titleArea.setText(dataModel?.title)
-                binding.textArea.setText(dataModel?.content)
-                binding.timeArea.setText(dataModel?.time)
+                if (dataModel != null) {
+                    binding.titleArea.setText(dataModel.title)
+                    binding.textArea.setText(dataModel.content)
+                    val writerUid = dataModel.uid
+                }
 
                 val myUid = FBAuth.getUid()
                 val writerUid = dataModel?.uid
